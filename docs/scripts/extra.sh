@@ -1,6 +1,6 @@
 #!/bin/bash
-# Update: 2022-10-20
-# Content: add  jd_superBrand.js(特务Z-II) jd_superBrandJK.js(特务集卡) jd_superBrandJXZ.js(特务集勋章) jd_gold_creation.js(金榜创造营) jd_cxxb.js(穿行寻宝)
+# Update: 2022-10-22
+# Content: add  jd_dfw.js(穿行寻宝-大富翁刷金币)
 #          del  jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_hwj_sb.js jd_xm818.js
 
 ##############################  京  东  商  城  ##############################
@@ -39,6 +39,8 @@
 #  jd_superBrandStar.js            特务之明星送好礼
 #  jd_gold_creation.js             金榜创造营
 #  jd_cxxb.js                      穿行寻宝
+#  jd_dfw.js                       穿行寻宝-大富翁刷金币
+
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -81,8 +83,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NewLine="\n          "
-UpdateDate="2022-10-20"
-UpdateContent="add  jd_superBrand.js(特务Z-II) jd_superBrandJK.js(特务集卡) jd_superBrandJXZ.js(特务集勋章) jd_gold_creation.js(金榜创造营) jd_cxxb.js(穿行寻宝)"
+UpdateDate="2022-10-22"
+UpdateContent="add  jd_dfw.js(穿行寻宝-大富翁刷金币)"
 DeleteScripts="jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_xiaomi.js jd_hwj_sb.js jd_xm818.js"
 
 ## 定义下载代理 (非内置功能)
@@ -125,6 +127,7 @@ my_scripts_array_yyds=(
   jd_wyw.js
   jd_ddly.js
   jd_speed_redpocke.js
+  jd_dfw.js
 )
 
 ## KingRan
