@@ -109,7 +109,6 @@ scripts_base_url_Public="https://supermanito.github.io/Helloworld/scripts/"
 my_scripts_array_Public=(
   jd_shop_sign.js
   jd_price.js
-  jd_cxxb.js
 )
 
 ## yyds
