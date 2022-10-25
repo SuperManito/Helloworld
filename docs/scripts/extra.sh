@@ -1,6 +1,6 @@
 #!/bin/bash
-# Update: 2022-10-23
-# Content: add  del  jd_cxxb.js(穿行寻宝)
+# Update: 2022-10-25
+# Content: add  jd_desire.js(京东集魔方)
 #          del  jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js
 
 ##############################  京  东  商  城  ##############################
@@ -39,6 +39,7 @@
 #  jd_superBrandStar.js            特务之明星送好礼
 #  jd_gold_creation.js             金榜创造营
 #  jd_dfw.js                       穿行寻宝-大富翁刷金币
+#  jd_desire.js                    京东集魔方
 
 
 ##############################  脚  本  内  环  境  变  量  ##############################
@@ -83,8 +84,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NewLine="\n          "
-UpdateDate="2022-10-23"
-UpdateContent="del  jd_cxxb.js(穿行寻宝)"
+UpdateDate="2022-10-25"
+UpdateContent="add  jd_desire.js(京东集魔方)"
 DeleteScripts="jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_xiaomi.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js"
 
 ## 定义下载代理 (非内置功能)
@@ -144,6 +145,7 @@ my_scripts_array_KingRan=(
   jd_sign_graphics.js
   jd_shangou.js
   jd_gold_creation.js
+  jd_desire.js
 )
 
 ## X1a0He
