@@ -8,7 +8,7 @@
 
 - **底层代码没有植入关于作者的任何互助码，不会收集您的任何隐私内容** <!-- {docsify-ignore} -->
 
-> :fa-brands fa-telegram: [电报频道](https://t.me/jdhelloworld)&emsp;&emsp;:fa-solid fa-warehouse:[ 镜像仓库](https://hub.docker.com/r/supermanito/helloworld)
+> :fa-brands fa-telegram: [电报频道](https://t.me/jdhelloworld)&emsp;&emsp;:fa-solid fa-warehouse: [镜像仓库](https://hub.docker.com/r/supermanito/helloworld)
 
 ## :fa-regular fa-command: CLI 命令 <!-- {docsify-ignore} -->
 

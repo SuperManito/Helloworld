@@ -17,11 +17,8 @@
       ```bash
       taskctl panel info | grep ApiToken
       ```
-      ?> 此 token 默认初始值为 `88888888` ，每次修改面板登录认证信息都会随机一个新的 `32` 位字符串
+      ?> 此 **Token** 初始值为 `88888888` ，每次修改面板登录认证信息都会随机一个新的 `32` 位字符串
 
-      > [!ATTENTION]
-      > 最新版本已将 `cookieApiToken` 更名为 `openApiToken`\
-      > 如仍显示旧版名称则需要在控制面板修改登录认证信息以重置此Token
 
 - ### 1. 支持的请求方法
 
@@ -40,11 +37,11 @@
   |  `200`   |          OK           | 请求成功                                        |
   |  `201`   |        CREATED        | 创建成功                                        |
   |  `204`   |        DELETED        | 删除成功                                        |
-  |  `400`   |      BAD REQUEST      | 请求的地址不存在或者包含不支持的参数                 |
+  |  `400`   |      BAD REQUEST      | 请求的地址不存在或者包含不支持的参数               |
   |  `401`   |     UNAUTHORIZED      | 未授权                                          |
   |  `403`   |       FORBIDDEN       | 被禁止访问                                       |
   |  `404`   |       NOT FOUND       | 请求的资源不存在                                  |
-  |  `422`   |  Unprocesable entity  | [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误  |
+  |  `422`   |  Unprocesable entity  | [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误 |
   |  `500`   | INTERNAL SERVER ERROR | 内部错误                                         |
 
 - ### 3.业务代码说明
