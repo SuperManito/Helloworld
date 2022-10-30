@@ -19,7 +19,7 @@ function Help() {
 ## 检查面板状态
 function Check_Panel_Status() {
     pm2 list | sed "/─/d" | perl -pe "{s| ||g; s#│#|#g}" | sed "1d" >$FilePm2List
-    cat $FilePm2List | awk -F '|' '{print$3}' | grep "server" -wq
+    cat $FilePm2List | awk -F '|' '{print$3}' | grep "web_server" -wq
     if [ $? -eq 0 ]; then
         if [[ $(cat $FilePm2List | grep "web_server" -w | awk -F '|' '{print$10}') != "online" ]]; then
             echo -e "\n$ERROR 请先启动控制面板！\n"
