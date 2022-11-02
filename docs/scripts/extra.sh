@@ -1,6 +1,6 @@
 #!/bin/bash
-# Update: 2022-10-28
-# Content: del  jd_dfw.js(穿行寻宝-大富翁刷金币)
+# Update: 2022-11-02
+# Content: add  jd_dfw.js(穿行寻宝-大富翁刷金币)
 #          del  jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js
 
 ##############################  京  东  商  城  ##############################
@@ -39,6 +39,7 @@
 #  jd_superBrandStar.js            特务之明星送好礼
 #  jd_gold_creation.js             金榜创造营
 #  jd_desire.js                    京东集魔方
+#  jd_dfw.js                       穿行寻宝-大富翁刷金币
 
 
 ##############################  脚  本  内  环  境  变  量  ##############################
@@ -84,8 +85,8 @@
 
 NewLine="\n          "
 UpdateDate="2022-10-28"
-UpdateContent="del  jd_dfw.js(穿行寻宝-大富翁刷金币)"
-DeleteScripts="jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_xiaomi.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js jd_dfw.js"
+UpdateContent="add  jd_dfw.js(穿行寻宝-大富翁刷金币)"
+DeleteScripts="jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_xiaomi.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js"
 
 ## 定义下载代理 (非内置功能)
 if [[ ${EnableExtraShellProxy} ]] && [[ ${EnableExtraShellProxy} == true ]]; then
@@ -126,6 +127,7 @@ my_scripts_array_yyds=(
   jd_wyw.js
   jd_ddly.js
   jd_speed_redpocke.js
+  jd_dfw.js
 )
 
 ## KingRan
