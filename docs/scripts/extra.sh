@@ -1,7 +1,7 @@
 #!/bin/bash
 # Update: 2022-11-02
-# Content: add  jd_dfw.js(穿行寻宝-大富翁刷金币)
-#          del  jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js
+# Content: add  jd_dfw.js(穿行寻宝-大富翁刷金币)${NewLine}del jd_desire.js(京东集魔方)
+#          del  jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js jd_desire.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -38,7 +38,6 @@
 #  jd_superBrandJXZ.js             特务集勋章
 #  jd_superBrandStar.js            特务之明星送好礼
 #  jd_gold_creation.js             金榜创造营
-#  jd_desire.js                    京东集魔方
 #  jd_dfw.js                       穿行寻宝-大富翁刷金币
 
 
@@ -79,14 +78,15 @@
 # jd_twCard.js
 # jd_hwj_sb.js
 # jd_cxxb.js
+# jd_desire.js
 
 ##############################  主  要  代  码  ##############################
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NewLine="\n          "
 UpdateDate="2022-11-02"
-UpdateContent="add  jd_dfw.js(穿行寻宝-大富翁刷金币)"
-DeleteScripts="jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_xiaomi.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js"
+UpdateContent="add  jd_dfw.js(穿行寻宝-大富翁刷金币)${NewLine}del jd_desire.js(京东集魔方)"
+DeleteScripts="jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_xiaomi.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js jd_desire.js"
 
 ## 定义下载代理 (非内置功能)
 if [[ ${EnableExtraShellProxy} ]] && [[ ${EnableExtraShellProxy} == true ]]; then
@@ -145,7 +145,6 @@ my_scripts_array_KingRan=(
   jd_sign_graphics.js
   jd_shangou.js
   jd_gold_creation.js
-  jd_desire.js
 )
 
 ## X1a0He
