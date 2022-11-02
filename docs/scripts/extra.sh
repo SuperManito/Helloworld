@@ -84,7 +84,7 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NewLine="\n          "
-UpdateDate="2022-10-28"
+UpdateDate="2022-11-02"
 UpdateContent="add  jd_dfw.js(穿行寻宝-大富翁刷金币)"
 DeleteScripts="jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_xiaomi.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js"
 
