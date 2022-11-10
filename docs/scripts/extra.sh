@@ -1,7 +1,7 @@
 #!/bin/bash
 # Update: 2022-11-10
-# Content: add  jd_TreasureRank.js(京东宝藏榜)
-#          del  jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js jd_desire.js
+# Content: add  jd_TreasureRank.js(京东宝藏榜) jd_superBrandJK_1.js(特务集卡)${NewLine}del  jd_superBrandJK.js(特务集卡)
+#          del  jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js jd_desire.js jd_superBrandJK_1.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -34,7 +34,7 @@
 #  jd_shangou.js                   闪购签到有礼
 #  jd_jrsign.js                    京东金融双签
 #  jd_superBrand.js                特务Z-II
-#  jd_superBrandJK.js              特务集卡
+#  jd_superBrandJK_1.js            特务集卡
 #  jd_superBrandJXZ.js             特务集勋章
 #  jd_superBrandStar.js            特务之明星送好礼
 #  jd_gold_creation.js             金榜创造营
@@ -86,8 +86,8 @@
 
 NewLine="\n          "
 UpdateDate="2022-11-10"
-UpdateContent="add  jd_TreasureRank.js(京东宝藏榜)"
-DeleteScripts="jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_xiaomi.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js jd_desire.js"
+UpdateContent="add  jd_TreasureRank.js(京东宝藏榜) jd_superBrandJK_1.js(特务集卡)${NewLine}del  jd_superBrandJK.js(特务集卡)"
+DeleteScripts="jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_xiaomi.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js jd_desire.js jd_superBrandJK.js"
 
 ## 定义下载代理 (非内置功能)
 if [[ ${EnableExtraShellProxy} ]] && [[ ${EnableExtraShellProxy} == true ]]; then
