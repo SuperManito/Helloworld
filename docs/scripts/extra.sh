@@ -1,7 +1,7 @@
 #!/bin/bash
 # Update: 2022-11-10
 # Content: add  jd_TreasureRank.js(京东宝藏榜) jd_superBrandJK_1.js(特务集卡)${NewLine}del  jd_superBrandJK.js(特务集卡)
-#          del  jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js jd_desire.js jd_superBrandJK_1.js
+#          del  jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js jd_desire.js jd_superBrandJK.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -80,6 +80,7 @@
 # jd_hwj_sb.js
 # jd_cxxb.js
 # jd_desire.js
+# jd_superBrandJK.js
 
 ##############################  主  要  代  码  ##############################
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
