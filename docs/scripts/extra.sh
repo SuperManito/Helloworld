@@ -136,7 +136,7 @@ scripts_base_url_KingRan="${GitHubRawUrl}/KingRan/KR/main/"
 my_scripts_array_KingRan=(
   sign_graphics_validate.js
   jd_superBrand.js
-  jd_superBrandJK.js
+  jd_superBrandJK_1.js
   jd_superBrandJXZ.js
   jd_superBrandStar.js
   jd_wish.js
