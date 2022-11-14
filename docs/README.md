@@ -6,7 +6,7 @@
 
 - **这是一个免费的公益项目，任何人都可以在自己的设备上安装和使用** <!-- {docsify-ignore} -->
 
-- **底层代码没有植入关于作者的任何互助码，不会收集您的任何隐私内容** <!-- {docsify-ignore} -->
+- **项目不会收集您的任何隐私内容，底层代码没有植入关于作者的任何私人内容** <!-- {docsify-ignore} -->
 
 > :fa-brands fa-telegram: [电报频道](https://t.me/jdhelloworld)&emsp;&emsp;:fa-solid fa-warehouse: [镜像仓库](https://hub.docker.com/r/supermanito/helloworld)
 
@@ -40,7 +40,7 @@
    taskctl check files               ✧ 检查项目相关配置文件是否存在，如果缺失就从模板导入
 
    update all                        ✧ 全部更新，包括项目源码，所有仓库和脚本，自定义脚本等
-   update <cmd/path>                 ✧ 指定更新，项目源码 shell，主要仓库 scripts，扩展仓库 own，所有仓库 repo，扩展脚本 raw
+   update <args/path>                 ✧ 指定更新，项目源码 shell，主要仓库 scripts，扩展仓库 own，所有仓库 repo，扩展脚本 raw
                                                  自定义脚本 extra，指定仓库 <path>
 
 ❋ 基本命令注释：
@@ -63,5 +63,5 @@
 
 ## :fa-duotone fa-browser: 控制面板 <!-- {docsify-ignore} -->
 
-![登录页](./img/panel/1.png ':size=640x340')
-![内容页](./img/panel/2.png ':size=640x340')
+![登录页](./src/img/panel/1.png ':size=60%')
+![内容页](./src/img/panel/2.png ':size=60%')

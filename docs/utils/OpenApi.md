@@ -185,10 +185,10 @@
 ## 三、用户自定义接口
 
 > [!NOTE|label:接口规范]
-> 请求路径需为 `openApi` 或 `api/extra` 作为开头，后者无需验证Token
+> 请求路径需使用 `openApi` 或 `api/extra` 作为开头，后者无需验证接口Token
 
 > [!NOTE|label:使用方法]
-> 将您的 **Api** 脚本以 `extra_server.js` 命名并存放在 **config** 目录下，重启面板后生效
+> 将您的 **Api** 脚本以 `extra_server.js` 命名并存放在 **config** 目录下，重启面板后生效，注意检测日志确认是否正确加载
 
   - 可以参考下方的简单示例
 
@@ -382,6 +382,9 @@
       | 批量操作账号（提交与删除） | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:green;"><i class="fa-solid fa-check"></i></span> |
       | 有限范围内的技术支持 | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:green;"><i class="fa-solid fa-check"></i></span> |
       | 后续所有更新内容 | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:green;"><i class="fa-solid fa-check"></i></span> |
+    <div>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
 
     - 定价
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 
 <head>
   <meta charset="UTF-8">
@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="./css/main.css" />
-  <link rel="stylesheet" href="./css/changelog.css" />
-  <link rel="stylesheet" href="./css/fontawesome.css" />
-  <link rel="stylesheet" href="./css/element-ui.css"/>
-  <link rel="stylesheet" href="./css/docsify-top-banner-plugin.css"/>
-  <link rel="icon" type="image/x-icon" href="./img/logo.gif" />
+  <link rel="stylesheet" href="./src/css/docsify-main.css" />
+  <link rel="stylesheet" href="./src/css/docsify-changelog.css" />
+  <link rel="stylesheet" href="./src/css/docsify-top-banner-plugin.css"/>
+  <link rel="stylesheet" href="./src/css/element-plus.css"/>
+  <link rel="stylesheet" href="./src/css/fontawesome.css" />
+  <link rel="icon" type="image/x-icon" href="./src/img/logo.gif" />
 </head>
 
 <body>
@@ -23,12 +23,12 @@
       // 导航栏标题
       name: 'Helloworld',
       // 导航栏logo
-      logo: './img/logo.gif',
-      // 导航栏
+      logo: './src/img/logo.gif',
+      // 导航栏（与主题不兼容）
       loadNavbar: false,
       // 小屏幕设备自动合并导航栏到侧边栏
       mergeNavbar: true,
-      // 加载目录
+      // 加载侧边栏
       loadSidebar: true,
       // 导航栏展开的子标题等级
       subMaxLevel: 3,
@@ -40,11 +40,11 @@
       changelog: './start/近期更新.md',
 
       // 搜索
-      search: 'auto',
       search: {
+        paths: 'auto',
         maxAge: 86400000, // 过期时间，单位毫秒，默认一天
         placeholder: '在此输入搜索内容',
-        noData: '找不到结果!',
+        noData: '找不到结果！',
         // 搜索标题的最大层级, 1 - 6
         depth: 2,
         hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
@@ -88,7 +88,7 @@
 
       // 页脚内容
       footer: {
-        copy: '<span>Copyright 2021 ～ 2022 <i class="fa-regular fa-copyright"></i> </span>',
+        copy: '<span>Copyright 2021 ~ 2022 <i class="fa-regular fa-copyright"></i> </span>',
         auth: '<a href="javascript:window.open(\'https://github.com/SuperManito\')">SuperManito</a>',
         pre: '',
         style: 'text-align: center;',
@@ -129,14 +129,13 @@
 
       // 浅色｜暗黑主题
       darklightTheme: {
-        siteFont: "PT Sans",
-        defaultTheme: 'dark',
-        codeFontFamily: 'Roboto Mono, Monaco, courier, monospace',
+        siteFont: "Source Sans Pro",
+        defaultTheme: 'light',
+        codeFontFamily: 'JetBrains Mono, Consolas, Roboto Mono, Monaco, courier, monospace',
         bodyFontSize: '17px',
         light: {
           themeColor: '#42b983',
-          toogleBackground: '#091a28',
-          background: '#ffffff',
+          backgroundColor: '#ffffff',
           textColor: '#34495e',
           codeTextColor: '#525252',
           codeBackgroundColor: '#f8f8f8',
@@ -145,80 +144,81 @@
           highlightColor: '#d22778',
           highlightBackgroundColor: '#efefef',
           buttonBackgroundColor: '#f3f3f3ce',
-          sidebarSublink: '#7c7c7c',
+          sidebarSublinkColor: '#7c7c7c',
           codeTypeColor: '#091a28',
           herfColor: '#16995e',
           hrColor: '#afafaf',
           coverBackground: 'linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)',
-          toogleImage: 'url(https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/moon.svg)',
+          toogleImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMzNDQ5NWUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLW1vb24iPjxwYXRoIGQ9Ik0yMSAxMi43OUE5IDkgMCAxIDEgMTEuMjEgMyA3IDcgMCAwIDAgMjEgMTIuNzl6Ij48L3BhdGg+PC9zdmc+")',
         },
         dark: {
           themeColor: '#4894df',
-          toogleBackground: '#ffffff',
-          background: 'rgb(15 23 42/1)',
+          backgroundColor: '#0F172A',
           textColor: '#b4b4b4',
           codeTextColor: '#ffffff',
           codeBackgroundColor: '#071426',
-          borderColor: '#0f293e',
+          borderColor: '#112436',
           blockQuoteColor: '#858585',
           highlightColor: '#c4882e',
           highlightBackgroundColor: '#122d44',
           buttonBackgroundColor: '#a8a8a825',
-          sidebarSublink: '#b4b4b4',
+          sidebarSublinkColor: '#b4b4b4',
           codeTypeColor: '#ffffff',
           herfColor: '#2973b7',
           hrColor: '#464646',
           coverBackground: 'linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)',
-          toogleImage: 'url(https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/sun.svg)',
+          toogleImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLXN1biI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iNSI+PC9jaXJjbGU+PGxpbmUgeDE9IjEyIiB5MT0iMSIgeDI9IjEyIiB5Mj0iMyI+PC9saW5lPjxsaW5lIHgxPSIxMiIgeTE9IjIxIiB4Mj0iMTIiIHkyPSIyMyI+PC9saW5lPjxsaW5lIHgxPSI0LjIyIiB5MT0iNC4yMiIgeDI9IjUuNjQiIHkyPSI1LjY0Ij48L2xpbmU+PGxpbmUgeDE9IjE4LjM2IiB5MT0iMTguMzYiIHgyPSIxOS43OCIgeTI9IjE5Ljc4Ij48L2xpbmU+PGxpbmUgeDE9IjEiIHkxPSIxMiIgeDI9IjMiIHkyPSIxMiI+PC9saW5lPjxsaW5lIHgxPSIyMSIgeTE9IjEyIiB4Mj0iMjMiIHkyPSIxMiI+PC9saW5lPjxsaW5lIHgxPSI0LjIyIiB5MT0iMTkuNzgiIHgyPSI1LjY0IiB5Mj0iMTguMzYiPjwvbGluZT48bGluZSB4MT0iMTguMzYiIHkxPSI1LjY0IiB4Mj0iMTkuNzgiIHkyPSI0LjIyIj48L2xpbmU+PC9zdmc+")',
         }
       }
     }
   </script>
-  <!-- Docsify v4 -->
-  <script src="./js/docsify.min.js"></script>
-  <!-- 暗黑主题 -->
-  <script src="./js/dark-theme.js"></script>
-  <!-- Font Awesome 图标 -->
-  <script src="./js/docsify-fontawesome.min.js"></script>
-  <script src="./js/docsify-fontawesome.sub.js"></script>
-  <!-- 灵活警告插件 -->
-  <script src="./js/docsify-flexible-alerts.min.js"></script>
+  <!-- Docsify v4.12 -->
+  <script src="./src/js/docsify.min.js"></script>
+  <!-- Vue 3 -->
+  <script src="./src/js/vue.global.js"></script>
+  <script src="./src/js/vue.global.prod.js"></script>
+  <!-- Element Plus UI -->
+  <script src="./src/js/element-plus.js"></script>
+  <!-- 主题 -->
+  <script src="./src/js/docsify-darklightTheme.js"></script>
+  <!-- 灵活警告UI插件 -->
+  <script src="./src/js/docsify-flexible-alerts.min.js"></script>
   <!-- 顶部横幅 -->
-  <script src="./js/docsify-top-banner-plugin.js"></script>
+  <script src="./src/js/docsify-top-banner-plugin.js"></script>
   <!-- 页脚内容 -->
-  <script src="./js/docsify-footer-enh.min.js"></script>
+  <script src="./src/js/docsify-footer-enh.min.js"></script>
   <!-- 底部跳转页码 -->
-  <script src="./js/docsify-pagination.min.js"></script>
+  <script src="./src/js/docsify-pagination.min.js"></script>
   <!-- 复制代码到剪贴板 -->
-  <script src="./js/docsify-copy-code.min.js"></script>
+  <script src="./src/js/docsify-copy-code.min.js"></script>
   <!-- 选项卡 -->
-  <script src="./js/docsify-tabs.min.js"></script>
+  <script src="./src/js/docsify-tabs.min.js"></script>
   <!-- 字数统计 -->
-  <script src="./js/docsify-countable.min.js"></script>
+  <script src="./src/js/docsify-countable.min.js"></script>
   <!-- Emoji表情支持 -->
-  <script src="./js/emoji.min.js"></script>
+  <script src="./src/js/docsify-emoji.min.js"></script>
   <!-- 搜索 -->
-  <script src="./js/search.js"></script>
-  <!-- 代码高亮 -->
-  <script src="./js/prism-bash.min.js"></script>
-  <script src="./js/prism-json.min.js"></script>
-  <script src="./js/prism-log.min.js"></script>
-  <script src="./js/prism-yaml.min.js"></script>
-  <script src="./js/prism-python.min.js"></script>
+  <script src="./src/js/docsify-search.js"></script>
+  <!-- 最近更新日志 -->
+  <script src="./src/js/docsify-changelog.js"></script>
   <!-- 图片缩放 -->
-  <script src="./js/zoom-image.min.js"></script>
-  <!-- 更新日志 -->
-  <script src="./js/changelog.js"></script>
-  <!-- 面板内置接口可视化工具 -->
-  <script src="./js/openApi-h5-popup.js"></script>
-  <script src="./js/element-ui.js"></script>
-  <script src="./js/sweetalert2.js"></script>
-  <!-- 离线模式 -->
+  <script src="./src/js/docsify-zoom-image.min.js"></script>
+  <!-- 本地离线缓存模式 -->
   <script>
-    if (typeof navigator.serviceWorker !== 'undefined') {
-      navigator.serviceWorker.register('./js/sw.js')
-    }
+    if (typeof navigator.serviceWorker !== 'undefined') {navigator.serviceWorker.register('./src/js/docsify-serviceWorker.js')}
   </script>
+  <!-- Font Awesome 图标 -->
+  <script src="./src/js/fontawesome.min.js"></script>
+  <script src="./src/js/fontawesome.sub.js"></script>
+  <!-- 代码块高亮组件 -->
+  <script src="./src/js/prism-bash.min.js"></script>
+  <script src="./src/js/prism-json.min.js"></script>
+  <script src="./src/js/prism-log.min.js"></script>
+  <script src="./src/js/prism-yaml.min.js"></script>
+  <script src="./src/js/prism-python.min.js"></script>
+  <!-- 面板内置接口可视化工具 -->
+  <script src="./src/js/openApi-h5-popup.js"></script>
+  <script src="./src/js/sweetalert2.js"></script>
 
 </body>
 
