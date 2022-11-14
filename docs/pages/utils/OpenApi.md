@@ -1,3 +1,5 @@
+<div id="pageApp">
+
 # 控制面板开放应用程序接口
 
 ## 一、接口说明
@@ -297,9 +299,7 @@
 
   - #### 公开版
 
-    <div>
-      <button class="el-button el-button--primary" onclick="ExtraAPI()">点击此处查看演示</button>
-    </div>
+    <n-button strong secondary type="info" onclick="ExtraAPI()">点击此处查看演示</n-button>
 
     - 示例
 
@@ -358,9 +358,7 @@
 
   - #### 专业版（付费资源）
 
-    <div>
-      <button class="el-button el-button--primary el-button--warning" onclick="javascript:window.open('https://supermanito.github.io/Helloworld/utils/demo_pro.html')">点击此处查看演示</button>
-    </div>
+    <n-button strong secondary type="warning" onclick="javascript:window.open('pages/utils/demo_pro.html')">点击此处查看演示</n-button>
 
     - 功能对比
 
@@ -382,9 +380,6 @@
       | 批量操作账号（提交与删除） | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:green;"><i class="fa-solid fa-check"></i></span> |
       | 有限范围内的技术支持 | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:green;"><i class="fa-solid fa-check"></i></span> |
       | 后续所有更新内容 | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:green;"><i class="fa-solid fa-check"></i></span> |
-    <div>
-    <button-counter></button-counter>
-    <button-counter></button-counter>
 
     - 定价
 
@@ -398,3 +393,12 @@
 
       > [!WARNING|label:声明]
       > 不接受以此名义任何方式的捐赠，更不改变项目永久免费的性质，之所以定价是想让付出变得有意义！
+
+</div>
+
+<script>
+  const App = {}
+  const app = Vue.createApp(App)
+  app.use(naive)
+  app.mount('#pageApp')
+</script>
