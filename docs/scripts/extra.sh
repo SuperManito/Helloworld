@@ -1,6 +1,6 @@
 #!/bin/bash
-# Update: 2022-11-12
-# Content: del  jd_dfw.js(穿行寻宝-大富翁刷金币)
+# Update: 2022-11-14
+# Content: add  jd_prodev_subject.js(短视频点赞抽奖)
 #          del  jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js jd_desire.js jd_superBrandJK.js jd_dfw.js
 
 ##############################  京  东  商  城  ##############################
@@ -39,6 +39,7 @@
 #  jd_superBrandStar.js            特务之明星送好礼
 #  jd_gold_creation.js             金榜创造营
 #  jd_TreasureRank.js              京东宝藏榜
+#  jd_prodev_subject.js            短视频点赞抽奖
 
 
 ##############################  脚  本  内  环  境  变  量  ##############################
@@ -86,8 +87,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NewLine="\n          "
-UpdateDate="2022-11-12"
-UpdateContent="del  jd_dfw.js(穿行寻宝-大富翁刷金币)"
+UpdateDate="2022-11-14"
+UpdateContent="add  jd_prodev_subject.js(短视频点赞抽奖)"
 DeleteScripts="jd_cxxb.js jd_desire.js jd_superBrandJK.js jd_dfw.js"
 
 ## 定义下载代理 (非内置功能)
@@ -129,6 +130,7 @@ my_scripts_array_yyds=(
   jd_wyw.js
   jd_ddly.js
   jd_speed_redpocke.js
+  jd_prodev_subject.js
 )
 
 ## KingRan
