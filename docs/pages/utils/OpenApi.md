@@ -358,7 +358,7 @@
 
   - #### 专业版（付费资源）
 
-    <n-button strong secondary type="warning" onclick="javascript:window.open('pages/utils/demo_pro.html')">点击此处查看演示</n-button>
+    <n-button strong secondary type="warning" onclick="javascript:window.open('src/public/demo_pro.html')">点击此处查看演示</n-button>
 
     - 功能对比
 
