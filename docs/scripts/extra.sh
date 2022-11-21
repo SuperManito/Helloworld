@@ -1,7 +1,6 @@
 #!/bin/bash
-# Update: 2022-11-14
-# Content: add  jd_prodev_subject.js(短视频点赞抽奖)
-#          del  jd_daily_lottery.js jd_productZ4Brand.js jd_twCard.js jd_hwj_sb.js jd_xm818.js jd_cxxb.js jd_desire.js jd_superBrandJK.js jd_dfw.js
+# Update: 2022-11-21
+# Content: add  jd_huodong.js(京东活动抽奖)
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -27,7 +26,6 @@
 #  jd_speed_redpocke.js            京东极速版红包
 #  jd_beauty.js                    美丽研究院修复版
 #  jd_joy_park_task.js             汪汪乐园每日任务
-#  jd_superBrandStar.js            特务Z明星送好礼
 #  jd_joymanor_task.js             JOY庄园每日任务
 #  jd_jin_tie_xh.js                领金贴
 #  jd_insight_Mod.js               京洞察问卷通知
@@ -36,10 +34,11 @@
 #  jd_superBrand.js                特务Z-II
 #  jd_superBrandJK_1.js            特务集卡
 #  jd_superBrandJXZ.js             特务集勋章
-#  jd_superBrandStar.js            特务之明星送好礼
+#  jd_superBrandStar.js            特务Z明星送好礼
 #  jd_gold_creation.js             金榜创造营
 #  jd_TreasureRank.js              京东宝藏榜
 #  jd_prodev_subject.js            短视频点赞抽奖
+#  jd_huodong.js                   京东活动抽奖
 
 
 ##############################  脚  本  内  环  境  变  量  ##############################
@@ -74,22 +73,14 @@
 
 ##############################  近  期  删  除  ##############################
 
-# jd_daily_lottery.js
-# jd_productZ4Brand.js
-# jd_twCard.js
-# jd_hwj_sb.js
-# jd_cxxb.js
-# jd_desire.js
-# jd_superBrandJK.js
-# jd_dfw.js
 
 ##############################  主  要  代  码  ##############################
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NewLine="\n          "
-UpdateDate="2022-11-14"
-UpdateContent="add  jd_prodev_subject.js(短视频点赞抽奖)"
-DeleteScripts="jd_cxxb.js jd_desire.js jd_superBrandJK.js jd_dfw.js"
+UpdateDate="2022-11-21"
+UpdateContent="jd_huodong.js(京东活动抽奖)"
+DeleteScripts=""
 
 ## 定义下载代理 (非内置功能)
 if [[ ${EnableExtraShellProxy} ]] && [[ ${EnableExtraShellProxy} == true ]]; then
@@ -149,6 +140,7 @@ my_scripts_array_KingRan=(
   jd_shangou.js
   jd_gold_creation.js
   jd_TreasureRank.js
+  jd_huodong.js
 )
 
 ## X1a0He
