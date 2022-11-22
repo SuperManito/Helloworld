@@ -1,7 +1,7 @@
 - <i class="fa-solid fa-escalator"></i> 入门
 
   - [<i class="fa-regular fa-tags"></i>&nbsp; 简介](README.md)
-  - [<i class="fa-regular fa-message-captions"></i>&nbsp; 前言](pages/start/前言.md)
+  - [<i class="fa-regular fa-message-captions"></i>&nbsp; 关于我们](pages/start/关于我们.md)
   - [<i class="fa-regular fa-clock-rotate-left"></i>&nbsp; 历史版本](pages/start/历史版本.md)
   - [<i class="fa-regular fa-bullhorn"></i>&nbsp; 重要通知](pages/start/重要通知.md)
 
@@ -37,3 +37,4 @@
 
   - [&nbsp;<i class="fa-regular fa-plug"></i>&nbsp; OpenApi](pages/utils/OpenApi.md)
   - [<i class="fa-regular fa-grid-2-plus"></i>&nbsp; 辅助工具](pages/utils/辅助工具.md)
+  - [<i class="fa-solid fa-monitor-waveform"></i>&nbsp; 线报监控](pages/utils/线报监控.md)

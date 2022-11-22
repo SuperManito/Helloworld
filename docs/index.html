@@ -9,19 +9,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="./src/css/docsify.main.css" />
   <link rel="stylesheet" href="./src/css/docsify-changelog.css" />
-  <link rel="stylesheet" href="./src/css/docsify-top-banner-plugin.css"/>
-  <link rel="stylesheet" href="./src/css/element-plus.css"/>
+  <link rel="stylesheet" href="./src/css/docsify-top-banner-plugin.css" />
+  <link rel="stylesheet" href="./src/css/element-plus.css" />
   <link rel="stylesheet" href="./src/css/fontawesome.css" />
   <link rel="icon" type="image/x-icon" href="./src/img/logo.gif" />
 </head>
 
 <body>
   <nav></nav>
-  <div id="app">正在加载，马上就好~</div>
+  <div id="app">
+    <div class="loader">
+      <div class="inner one"></div>
+      <div class="inner two"></div>
+      <div class="inner three"></div>
+    </div>
+    正在加载
+  </div>
   <script>
     window.$docsify = {
-      // 导航栏标题
+      // 文档标题
       name: 'Helloworld',
+      // 自定义首页
+      homepage: 'pages/HomePage.md',
       // 导航栏logo
       logo: './src/img/logo.gif',
       // 导航栏（与主题不兼容）
@@ -127,47 +136,69 @@
         }
       },
 
-      // 浅色｜暗黑主题
+      // 主题配置浅色｜深色主题
       darklightTheme: {
-        siteFont: "Source Sans Pro",
+        siteFont: "-apple-system, SF Pro, Microsoft YaHei, Source Sans Pro, Helvetica Neue, Arial, sans-serif",
         defaultTheme: 'light',
-        codeFontFamily: 'JetBrains Mono, Consolas, Roboto Mono, Monaco, courier, monospace',
+        codeFontFamily: 'JetBrains Mono',
         bodyFontSize: '17px',
+        // 浅色主题
         light: {
+          // 主题（颜色）
           themeColor: '#42b983',
+          // 背景（颜色）
           backgroundColor: '#ffffff',
-          textColor: '#34495e',
-          codeTextColor: '#525252',
+          // 标题字符（颜色）
+          titleColor: '#1F2225',
+          // 一般字符（颜色）
+          textColor: '#1a1a1f',
+          // 粗体字符色
+          textStrongColor: '#565656',
+          // 代码块代码（颜色）
+          codeTextColor: '#1a1a1f',
+          // 代码块类型字符（颜色）
+          codeTypeColor: '#1a1a1f',
+          // 代码块背景（颜色）
           codeBackgroundColor: '#f8f8f8',
+          // 边框（颜色）
           borderColor: 'rgba(0, 0, 0, 0.07)',
-          blockQuoteColor: '#858585',
+          // 注释内容（颜色）
+          blockQuoteColor: '#787878',
+          // 强调字符（颜色）
           highlightColor: '#d22778',
+          // 强调字符背景（颜色）
           highlightBackgroundColor: '#efefef',
-          buttonBackgroundColor: '#f3f3f3ce',
+          // 按钮悬浮效果背景（颜色）
+          buttonBackgroundColor: '#F3F3F5',
+          // 侧边栏标题（颜色）
           sidebarSublinkColor: '#7c7c7c',
-          codeTypeColor: '#091a28',
+          // 超链接（颜色）
           herfColor: '#16995e',
+          // 分割线（颜色）
           hrColor: '#afafaf',
           coverBackground: 'linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)',
-          toogleImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMzNDQ5NWUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLW1vb24iPjxwYXRoIGQ9Ik0yMSAxMi43OUE5IDkgMCAxIDEgMTEuMjEgMyA3IDcgMCAwIDAgMjEgMTIuNzl6Ij48L3BhdGg+PC9zdmc+")',
+          themeIcon: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMzNDQ5NWUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLW1vb24iPjxwYXRoIGQ9Ik0yMSAxMi43OUE5IDkgMCAxIDEgMTEuMjEgMyA3IDcgMCAwIDAgMjEgMTIuNzl6Ij48L3BhdGg+PC9zdmc+")',
         },
+        // 深色主题
         dark: {
           themeColor: '#4894df',
           backgroundColor: '#0F172A',
-          textColor: '#b4b4b4',
-          codeTextColor: '#ffffff',
+          titleColor: '#d5d5d5',
+          textColor: '#c1c1c1',
+          textStrongColor: '#bbbbbb',
+          codeTextColor: '#c1c1c1',
+          codeTypeColor: '#c1c1c1',
           codeBackgroundColor: '#071426',
           borderColor: '#112436',
-          blockQuoteColor: '#858585',
+          blockQuoteColor: '#b7b7b7',
           highlightColor: '#c4882e',
           highlightBackgroundColor: '#122d44',
           buttonBackgroundColor: '#a8a8a825',
           sidebarSublinkColor: '#b4b4b4',
-          codeTypeColor: '#ffffff',
           herfColor: '#2973b7',
           hrColor: '#464646',
           coverBackground: 'linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)',
-          toogleImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLXN1biI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iNSI+PC9jaXJjbGU+PGxpbmUgeDE9IjEyIiB5MT0iMSIgeDI9IjEyIiB5Mj0iMyI+PC9saW5lPjxsaW5lIHgxPSIxMiIgeTE9IjIxIiB4Mj0iMTIiIHkyPSIyMyI+PC9saW5lPjxsaW5lIHgxPSI0LjIyIiB5MT0iNC4yMiIgeDI9IjUuNjQiIHkyPSI1LjY0Ij48L2xpbmU+PGxpbmUgeDE9IjE4LjM2IiB5MT0iMTguMzYiIHgyPSIxOS43OCIgeTI9IjE5Ljc4Ij48L2xpbmU+PGxpbmUgeDE9IjEiIHkxPSIxMiIgeDI9IjMiIHkyPSIxMiI+PC9saW5lPjxsaW5lIHgxPSIyMSIgeTE9IjEyIiB4Mj0iMjMiIHkyPSIxMiI+PC9saW5lPjxsaW5lIHgxPSI0LjIyIiB5MT0iMTkuNzgiIHgyPSI1LjY0IiB5Mj0iMTguMzYiPjwvbGluZT48bGluZSB4MT0iMTguMzYiIHkxPSI1LjY0IiB4Mj0iMTkuNzgiIHkyPSI0LjIyIj48L2xpbmU+PC9zdmc+")',
+          themeIcon: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLXN1biI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iNSI+PC9jaXJjbGU+PGxpbmUgeDE9IjEyIiB5MT0iMSIgeDI9IjEyIiB5Mj0iMyI+PC9saW5lPjxsaW5lIHgxPSIxMiIgeTE9IjIxIiB4Mj0iMTIiIHkyPSIyMyI+PC9saW5lPjxsaW5lIHgxPSI0LjIyIiB5MT0iNC4yMiIgeDI9IjUuNjQiIHkyPSI1LjY0Ij48L2xpbmU+PGxpbmUgeDE9IjE4LjM2IiB5MT0iMTguMzYiIHgyPSIxOS43OCIgeTI9IjE5Ljc4Ij48L2xpbmU+PGxpbmUgeDE9IjEiIHkxPSIxMiIgeDI9IjMiIHkyPSIxMiI+PC9saW5lPjxsaW5lIHgxPSIyMSIgeTE9IjEyIiB4Mj0iMjMiIHkyPSIxMiI+PC9saW5lPjxsaW5lIHgxPSI0LjIyIiB5MT0iMTkuNzgiIHgyPSI1LjY0IiB5Mj0iMTguMzYiPjwvbGluZT48bGluZSB4MT0iMTguMzYiIHkxPSI1LjY0IiB4Mj0iMTkuNzgiIHkyPSI0LjIyIj48L2xpbmU+PC9zdmc+")',
         }
       }
     }
@@ -177,8 +208,6 @@
   <!-- Vue 3 -->
   <script src="./src/js/vue.main.js"></script>
   <script src="./src/js/vue.prod.js"></script>
-  <!-- Naive UI -->
-  <script src="./src/js/naive-ui.js"></script>
   <!-- Element Plus UI -->
   <script src="./src/js/element-plus.js"></script>
   <!-- 主题 -->
@@ -207,7 +236,9 @@
   <script src="./src/js/docsify-zoom-image.min.js"></script>
   <!-- 本地离线缓存模式 -->
   <script>
-    if (typeof navigator.serviceWorker !== 'undefined') {navigator.serviceWorker.register('./src/js/docsify-serviceWorker.js')}
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('./src/js/docsify-serviceWorker.js')
+    }
   </script>
   <!-- Font Awesome 图标 -->
   <script src="./src/js/fontawesome.min.js"></script>

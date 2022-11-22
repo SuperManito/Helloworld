@@ -1,6 +1,4 @@
-<div id="pageApp">
-
-# 控制面板开放应用程序接口
+# :fa-regular fa-plug: 控制面板开放应用程序接口
 
 ## 一、接口说明
 
@@ -14,7 +12,7 @@
 
     !> 需要在 **请求头（Header）** 或 **请求地址参数（URL）** 中使用 `api-token` 字段并提供 `openApiToken` 的值
 
-    - #### 获取 `openApiToken` 的方法 <!-- {docsify-ignore} -->
+    - #### 获取 openApiToken 的方法 <!-- {docsify-ignore} -->
 
       ```bash
       taskctl panel info | grep ApiToken
@@ -22,94 +20,122 @@
       ?> 此 **Token** 初始值为 `88888888` ，每次修改面板登录认证信息都会随机一个新的 `32` 位字符串
 
 
-- ### 1. 支持的请求方法
+  - ### 1. 支持的请求方法 <!-- {docsify-ignore} -->
 
-  - `GET（SELECT）` 从服务器取出资源（一项或多项）
-  - `POST（CREATE）` 在服务器新建一个资源
-  - `PUT（UPDATE）` 在服务器更新资源（客户端提供改变后的完整资源）
-  - `PATCH（UPDATE）` 在服务器更新资源（客户端提供改变的属性）
-  - `DELETE（DELETE）` 从服务器删除资源
-  - `HEAD` 获取资源的元数据
-  - `OPTIONS` 获取信息，关于资源的哪些属性是客户端可以改变的
+    - `GET（SELECT）` 从服务器取出资源（一项或多项）
+    - `POST（CREATE）` 在服务器新建一个资源
+    - `PUT（UPDATE）` 在服务器更新资源（客户端提供改变后的完整资源）
+    - `PATCH（UPDATE）` 在服务器更新资源（客户端提供改变的属性）
+    - `DELETE（DELETE）` 从服务器删除资源
+    - `HEAD` 获取资源的元数据
+    - `OPTIONS` 获取信息，关于资源的哪些属性是客户端可以改变的
 
-- ### 2. 通用返回状态说明
+  - ### 2. 通用返回状态说明 <!-- {docsify-ignore} -->
 
-  |  状态码   |         含义           | 说明                                            |
-  | :------: | :-------------------: | :---------------------------------------------: |
-  |  `200`   |          OK           | 请求成功                                         |
-  |  `201`   |        CREATED        | 创建成功                                         |
-  |  `204`   |        DELETED        | 删除成功                                         |
-  |  `400`   |      BAD REQUEST      | 请求的地址不存在或者包含不支持的参数                |
-  |  `401`   |     UNAUTHORIZED      | 未授权                                           |
-  |  `403`   |       FORBIDDEN       | 被禁止访问                                       |
-  |  `404`   |       NOT FOUND       | 请求的资源不存在                                  |
-  |  `422`   |  Unprocesable entity  | [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误 |
-  |  `500`   | INTERNAL SERVER ERROR | 内部错误                                         |
+    |  状态码   |         含义           | 说明                                            |
+    | :------: | :-------------------: | :---------------------------------------------: |
+    |  `200`   |          OK           | 请求成功                                         |
+    |  `201`   |        CREATED        | 创建成功                                         |
+    |  `204`   |        DELETED        | 删除成功                                         |
+    |  `400`   |      BAD REQUEST      | 请求的地址不存在或者包含不支持的参数                |
+    |  `401`   |     UNAUTHORIZED      | 未授权                                           |
+    |  `403`   |       FORBIDDEN       | 被禁止访问                                       |
+    |  `404`   |       NOT FOUND       | 请求的资源不存在                                  |
+    |  `422`   |  Unprocesable entity  | [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误 |
+    |  `500`   | INTERNAL SERVER ERROR | 内部错误                                         |
 
-- ### 3.业务代码说明
+  - ### 3. 业务代码说明 <!-- {docsify-ignore} -->
 
-  |    状态码     |       含义       |       说明       |
-  | :----------: | :--------------: | :------------: |
-  |     `0`      |       fail       |     请求错误     |
-  |     `1`      |     success      |     请求成功     |
-  | `403`/`4403` | openApi 认证失败  |   验证token有误   |
+    |    状态码     |       含义       |       说明       |
+    | :----------: | :--------------: | :-------------: |
+    |     `0`      |       fail       |     请求失败     |
+    |     `1`      |     success      |     请求成功     |
+    | `403`/`4403` | openApi 认证失败  |    token错误    |
 
-- ### 4. 通用返回内容
+  - ### 4. 通用返回内容 <!-- {docsify-ignore} -->
 
-  |  参数名 | 参数说明 |
-  | :----: | :-----: |
-  |  code  | 业务代码 |
-  |  data  | 返回结果 |
-  |  msg   | 结果消息 |
-  |  desc  | 结果描述 |
+    |  参数名 | 参数说明 |
+    | :----: | :-----: |
+    |  code  | 业务代码 |
+    |  data  | 返回结果 |
+    |  msg   | 结果消息 |
+    |  desc  | 结果描述 |
 
 ***
 
 ## 二、内置接口
 
-- ### 1. 添加/更新账号
+  - ### 添加/更新账号
 
-  - #### Cookie
+    - #### Cookie
 
-    - 请求路径：`updateCookie`
+      - 请求路径：`updateCookie`
+      - 请求方法：`POST`
+
+      - 请求参数
+
+        |  参数名  |   参数说明   |   备注   |
+        | :-----: | :---------: | :-----: |
+        | cookie  | 完整cookie值 | 不能为空 |
+        | userMsg |     备注     | 可以为空 |
+
+      - 接口响应示例
+
+        ```json
+        {
+          code: 1,
+          data: 1,
+          msg: "success"
+        }
+        ```
+        > [!NOTE|label:参数说明]
+        > `msg` 调用接口结果消息内容\
+        > `code` 业务代码中的状态码\
+        > `data` 表示提交后服务器中现存的 Cookie 数量（整数）
+
+    - #### WSKEY & Cookie 二合一
+
+      - 请求路径：`addOrUpdateAccount`
+      - 请求方法：`POST`
+
+      - 请求参数
+
+        |  参数名  |  参数说明   |            备注           |
+        | :-----: | :-------: | :-----------------------: |
+        |  ptPin  | pt_pin的值 |          不能为空          |
+        |  ptKey  | pt_key的值 |  可以为空，如果为空则不更新   |
+        |  wsKey  | ws_key的值 |  可以为空，如果为空则不更新   |
+        | remarks |  备注内容   | 可以为空，默认为`ptPin`的值  |
+
+        > `ptKey` 和 `wsKey` 至少需要传入其中任意一个参数即账号不能为空
+
+      - 接口响应示例
+
+        ```json
+        {
+            code: 1,
+            data: {
+                cookieCount: 1,
+                accountCount: 1
+            },
+            msg: ""
+        }
+        ```
+        > [!NOTE|label:参数说明]
+        > `msg` 调用接口结果消息内容\
+        > `code` 业务代码中的状态码\
+        > `data` **cookieCount** 表示提交后服务器中现存的 Cookie 数量（整数）\
+        >ㅤㅤㅤ   **accountCount** 表示提交后服务器中现存的 wskey 数量（整数）
+
+  - ### 删除账号
+
+    - 请求路径：`cookie/delete`
     - 请求方法：`POST`
-
     - 请求参数
 
-      |  参数名  |   参数说明   |   备注   |
-      | :-----: | :---------: | :-----: |
-      | cookie  | 完整cookie值 | 不能为空 |
-      | userMsg |     备注     | 可以为空 |
-
-    - 接口响应示例
-
-      ```json
-      {
-        code: 1,
-        data: 1,
-        msg: "success"
-      }
-      ```
-      > [!NOTE|label:参数说明]
-      > `msg`：调用接口结果消息内容\
-      > `code`：业务代码中的状态码\
-      > `data`：表示提交后服务器中现存的 Cookie 数量（整数）
-
-  - #### WSKEY & Cookie 二合一
-
-    - 请求路径：`addOrUpdateAccount`
-    - 请求方法：`POST`
-
-    - 请求参数
-
-      |  参数名  |  参数说明   |            备注           |
-      | :-----: | :-------: | :-----------------------: |
-      |  ptPin  | pt_pin的值 |          不能为空          |
-      |  ptKey  | pt_key的值 |  可以为空，如果为空则不更新   |
-      |  wsKey  | ws_key的值 |  可以为空，如果为空则不更新   |
-      | remarks |  备注内容   | 可以为空，默认为`ptPin`的值  |
-
-      > `ptKey` 和 `wsKey` 至少需要传入其中任意一个参数即账号不能为空
+      | 参数名 |        参数说明        |         备注         |
+      | :----: | :-----------------: | :------------------: |
+      | ptPins | 由pt_pin的值组成的数组 | 例 `["pin1","pin2"]` |
 
     - 接口响应示例
 
@@ -118,69 +144,41 @@
           code: 1,
           data: {
               cookieCount: 1,
-              accountCount: 1
+              accountCount: 1,
+              deleteCount: 1
           },
           msg: ""
       }
       ```
       > [!NOTE|label:参数说明]
-      > `msg`：调用接口结果消息内容\
-      > `code`：业务代码中的状态码\
-      > `data`：**cookieCount** 表示提交后服务器中现存的 Cookie 数量（整数）\
-      >ㅤㅤㅤㅤ **accountCount** 表示提交后服务器中现存的 wskey 数量（整数）
+      > `msg` 调用接口结果消息内容\
+      > `code` 业务代码中的状态码\
+      > `data` **cookieCount** 表示提交后服务器中现存的 Cookie 数量（整数）\
+      >ㅤㅤㅤ **accountCount** 表示提交后服务器中现存的 wskey 数量（整数）\
+      >ㅤㅤㅤ  **deleteCount** 表示此次删除的 Cookie 数量
 
-- ### 2. 删除账号
+  - ### 查看账号数量
 
-  - 请求路径：`cookie/delete`
-  - 请求方法：`POST`
-  - 请求参数：
+    - 请求路径：`count`
+    - 请求方法：`GET`
 
-    | 参数名 |        参数说明        |         备注         |
-    | :----: | :-----------------: | :------------------: |
-    | ptPins | 由pt_pin的值组成的数组 | 例 `["pin1","pin2"]` |
+    - 接口响应示例
 
-  - 接口响应示例
-
-    ```json
-    {
-        code: 1,
-        data: {
-            cookieCount: 1,
-            accountCount: 1,
-            deleteCount: 1
-        },
-        msg: ""
-    }
-    ```
-    > [!NOTE|label:参数说明]
-    > `msg`：调用接口结果消息内容\
-    > `code`：业务代码中的状态码\
-    > `data`：**cookieCount** 表示提交后服务器中现存的 Cookie 数量（整数）\
-    >ㅤㅤㅤㅤ **accountCount** 表示提交后服务器中现存的 wskey 数量（整数）\
-    >ㅤㅤㅤㅤ **deleteCount** 表示此次删除的 Cookie 数量
-
-- ### 3. 统计账号数量
-
-  - 请求路径：`count`
-  - 请求方法：`GET`
-
-  - 接口响应示例
-
-    ```json
-    {
-        code: 1,
-        data: {
-            "cookieCount": 1,
-            "accountCount": 1
-        },
-        msg: ""
-    }
-    ```
-    > [!NOTE|label:参数说明]
-    > `msg`：调用接口结果消息内容\
-    > `code`：业务代码中的状态码\
-    > `data`：**cookieCount** 表示服务器当前现存的 Cookie 数量（整数）\
-    >ㅤㅤㅤㅤ **accountCount** 表示服务器当前现存的 wskey 数量（整数）
+      ```json
+      {
+          code: 1,
+          data: {
+              "cookieCount": 1,
+              "accountCount": 1
+          },
+          msg: ""
+      }
+      ```
+      > [!NOTE|label:参数说明]
+      > `msg` 调用接口结果消息内容\
+      > `code` 业务代码中的状态码\
+      > `data` **cookieCount** 表示服务器当前现存的 Cookie 数量（整数）\
+      >ㅤㅤㅤ **accountCount** 表示服务器当前现存的 wskey 数量（整数）
 
 ***
 
@@ -192,7 +190,7 @@
 > [!NOTE|label:使用方法]
 > 将您的 **Api** 脚本以 `extra_server.js` 命名并存放在 **config** 目录下，重启面板后生效，注意检测日志确认是否正确加载
 
-  - 可以参考下方的简单示例
+  - ##### 可以参考下方的简单示例
 
     <div style='color: var(--themeColor);'>
     <details>
@@ -291,17 +289,15 @@
 
 ## 四、内置接口可视化
 
-- ### HTML5 灵活弹出框
+- ### JavaScript 灵活弹出框 <!-- {docsify-ignore} -->
 
-  > 一个基于 [SweetAlert2](https://www.sweetalert2.cn) 定制的交互面板插件
-
-  > 目前支持查询账号数量、提交账号（二合一接口可自动识别提交的类型）、删除账号总共三个功能
+  > 一个基于 [SweetAlert2](https://www.sweetalert2.cn) 定制的交互面板插件，可在前端项目中轻松引入
 
   - #### 公开版
 
-    <n-button strong secondary type="info" onclick="ExtraAPI()">点击此处查看演示</n-button>
+    <button class="el-button el-button--primary" onclick="ExtraAPI()">点击此处查看演示</span></button>
 
-    - 示例
+    - ##### 示例
 
       ```html
       <!DOCTYPE html>
@@ -327,7 +323,7 @@
       </html>
       ```
 
-    - 源码
+    - ##### 源码
 
       <div style='color: var(--themeColor);'>
       <details>
@@ -358,11 +354,11 @@
 
   - #### 专业版（付费资源）
 
-    <n-button strong secondary type="warning" onclick="javascript:window.open('src/public/demo_pro.html')">点击此处查看演示</n-button>
+    <button class="el-button el-button--warning" onclick="javascript:window.open('src/public/demo_pro.html')">点击此处查看演示</span></button>
 
-    - 功能对比
+    - ##### 功能对比
 
-      | 具体功能 | 公开版 | 专业版 | 专业增强版 |
+      | 功能描述 | 公开版 | 专业版 | 专业增强版 |
       | :-----: | :---: | :---: | :------: |
       | 查询账号数量 | <span style="color:green;"><i class="fa-solid fa-check"></i></span> | <span style="color:green;"><i class="fa-solid fa-check"></i></span> | <span style="color:green;"><i class="fa-solid fa-check"></i></span> |
       | 删除账号 | <span style="color:green;"><i class="fa-solid fa-check"></i></span> | <span style="color:green;"><i class="fa-solid fa-check"></i></span> | <span style="color:green;"><i class="fa-solid fa-check"></i></span> |
@@ -381,7 +377,7 @@
       | 有限范围内的技术支持 | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:green;"><i class="fa-solid fa-check"></i></span> |
       | 后续所有更新内容 | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:red;"><i class="fa-solid fa-xmark"></i></span> | <span style="color:green;"><i class="fa-solid fa-check"></i></span> |
 
-    - 定价
+    - ##### 定价
 
       > [!NOTE|label:为什么要定价？]
       > 公开版逻辑简单代码仅有300行左右，专业版的代码已上千行，拒绝白嫖！\
@@ -393,12 +389,3 @@
 
       > [!WARNING|label:声明]
       > 不接受以此名义任何方式的捐赠，更不改变项目永久免费的性质，之所以定价是想让付出变得有意义！
-
-</div>
-
-<script>
-  const App = {}
-  const app = Vue.createApp(App)
-  app.use(naive)
-  app.mount('#pageApp')
-</script>

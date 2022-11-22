@@ -14,7 +14,7 @@
 
 ## :fa-regular fa-command: CLI 命令 <!-- {docsify-ignore} -->
 
-```
+```bash
 ❖ 主要命令：
 
    task <name/path/url> now          ✧ 普通执行，前台运行并在命令行输出进度，可选参数(支持多个，加在末尾)：-<l/m/w/h/d/p/r/c/g/b>
