@@ -36,5 +36,5 @@
 - <i class="fa-solid fa-puzzle-piece"></i> 扩展
 
   - [&nbsp;<i class="fa-regular fa-plug"></i>&nbsp; OpenApi](pages/utils/OpenApi.md)
-  - [<i class="fa-regular fa-grid-2-plus"></i>&nbsp; 辅助工具](pages/utils/辅助工具.md)
   - [<i class="fa-solid fa-monitor-waveform"></i>&nbsp; 线报监控](pages/utils/线报监控.md)
+  - [<i class="fa-regular fa-grid-2-plus"></i>&nbsp; 辅助工具](pages/utils/辅助工具.md)
