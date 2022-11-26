@@ -1,4 +1,5 @@
-# Helloworld <!-- {docsify-ignore} -->
+
+# ![Helloworld](src/img/logo.gif ':size=10%') Helloworld <!-- {docsify-ignore} -->
 
 [![dockeri.co](https://img.shields.io/docker/pulls/supermanito/helloworld?label=Docker%20Pulls&style=flat)](https://hub.docker.com/r/supermanito/helloworld) [![dockeri.co](https://img.shields.io/docker/stars/supermanito/helloworld?label=Stars&style=flat)](https://hub.docker.com/r/supermanito/helloworld)
 
@@ -17,8 +18,8 @@
 ```bash
 ❖ 主要命令：
 
-   task <name/path/url> now          ✧ 普通执行，前台运行并在命令行输出进度，可选参数(支持多个，加在末尾)：-<l/m/w/h/d/p/r/c/g/b>
-   task <name/path/url> conc         ✧ 并发执行，后台运行不在命令行输出进度，可选参数(支持多个，加在末尾)：-<m/w/d/p/r/c>
+   task <name/path/url> now          ✧ 普通执行，前台运行并在命令行输出进度，可选参数(支持多个，加在末尾)：-<l/m/w/h/a/d/p/r/c/g/b>
+   task <name/path/url> conc         ✧ 并发执行，后台运行不在命令行输出进度，可选参数(支持多个，加在末尾)：-<m/w/a/d/p/r/c>
    task <name/path> pkill            ✧ 终止执行，根据脚本匹配对应的进程并立即杀死，当脚本报错死循环时建议使用
    source runall                     ✧ 全部执行，在选择运行模式后执行指定范围的脚本(交互)，非常耗时不要盲目使用
 
@@ -42,8 +43,8 @@
    taskctl check files               ✧ 检查项目相关配置文件是否存在，如果缺失就从模板导入
 
    update all                        ✧ 全部更新，包括项目源码，所有仓库和脚本，自定义脚本等
-   update <args/path>                 ✧ 指定更新，项目源码 shell，主要仓库 scripts，扩展仓库 own，所有仓库 repo，扩展脚本 raw
-                                                 自定义脚本 extra，指定仓库 <path>
+   update <args/path>                ✧ 指定更新，项目源码 shell，主要仓库 scripts，扩展仓库 own，所有仓库 repo，扩展脚本 raw
+                                                自定义脚本 extra，指定仓库 <path>
 
 ❋ 基本命令注释：
 
@@ -55,6 +56,7 @@
    -m 或 --mute          静默运行，不推送任何通知消息
    -w 或 --wait          等待执行，等待指定时间后再运行任务，参数后需跟时间值
    -h 或 --hang          后台挂起，将脚本设置为守护进程保持在后台运行，期间中断或结束会自动重新运行
+   -a 或 --agent         网络代理，使脚本通过 HTTP/HTTPS 全局代理进行网络请求，仅支持 JavaScript 脚本
    -d 或 --delay         延迟执行，随机倒数一定秒数后再执行脚本
    -p 或 --proxy         下载代理，仅适用于执行位于 GitHub 仓库的脚本
    -r 或 --rapid         迅速模式，不组合互助码等步骤降低脚本执行前耗时
