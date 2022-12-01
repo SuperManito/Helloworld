@@ -1,12 +1,11 @@
 #!/bin/bash
-# Update: 2022-11-21
-# Content: add  jd_huodong.js(京东活动抽奖)
+# Update: 2022-12-01
+# Content: del jd_prodev_subject.js jd_huodong.js jd_cleancart.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
 
 #  jd_price.js                     京东价保
-#  jd_cleancart.js                 清空购物车               (需要设置变量才会运行，详见下方)
 #  jd_try.js                       京东试用                 (需要设置多个变量，详见下方)
 #  jd_try_notify.py                京东试用待领取通知
 #  jd_unsubscriLive.js             取关所有主播
@@ -37,18 +36,11 @@
 #  jd_superBrandStar.js            特务Z明星送好礼
 #  jd_gold_creation.js             金榜创造营
 #  jd_TreasureRank.js              京东宝藏榜
-#  jd_prodev_subject.js            短视频点赞抽奖
-#  jd_huodong.js                   京东活动抽奖
-
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
 ## 快速添加环境变量：task env add <变量名> <变量的值>
 
-# "清空购物车"
-#    export JD_CART=""               # 启用脚本
-#    export XH_CLEAN_REMOVESIZE=""   # 空值一次取消多少条购物车数据，0为不删除，默认100
-#    export XH_CLEAN_KEYWORDS=""     # 不从购物车清空的商品，填写过滤关键字/词，多个用@分隔
 # "批量取关店铺和商品"
 #    export JD_UNSUB_GKEYWORDS="" # 商品类过滤关键词，多个用@分隔
 #    export JD_UNSUB_SKEYWORDS="" # 店铺类过滤关键词，多个用@分隔
@@ -73,14 +65,17 @@
 
 ##############################  近  期  删  除  ##############################
 
+# jd_prodev_subject.js
+# jd_huodong.js
+# jd_cleancart.js
 
 ##############################  主  要  代  码  ##############################
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NewLine="\n          "
-UpdateDate="2022-11-21"
-UpdateContent="jd_huodong.js(京东活动抽奖)"
-DeleteScripts=""
+UpdateDate="2022-12-01"
+UpdateContent="del jd_prodev_subject.js jd_huodong.js jd_cleancart.js"
+DeleteScripts="jd_prodev_subject.js jd_huodong.js jd_cleancart.js"
 
 ## 定义下载代理 (非内置功能)
 if [[ ${EnableExtraShellProxy} ]] && [[ ${EnableExtraShellProxy} == true ]]; then
@@ -121,7 +116,6 @@ my_scripts_array_yyds=(
   jd_wyw.js
   jd_ddly.js
   jd_speed_redpocke.js
-  jd_prodev_subject.js
 )
 
 ## KingRan
@@ -140,14 +134,12 @@ my_scripts_array_KingRan=(
   jd_shangou.js
   jd_gold_creation.js
   jd_TreasureRank.js
-  jd_huodong.js
 )
 
 ## X1a0He
 scripts_base_url_X1a0He="${GitHubRawUrl}/X1a0He/jd_scripts_fixed/main/"
 my_scripts_array_X1a0He=(
   jd_unsubscribe_xh.js
-  jd_cleancart.js
   jd_jin_tie_xh.js
 )
 
