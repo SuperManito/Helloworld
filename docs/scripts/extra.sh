@@ -1,6 +1,6 @@
 #!/bin/bash
-# Update: 2022-12-01
-# Content: del jd_prodev_subject.js jd_huodong.js jd_cleancart.js
+# Update: 2022-12-02
+# Content: del jd_nnfls.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -15,7 +15,6 @@
 #  jd_morningSc.js                 早起赢现金               (活动入口在京东汽车-瓜分万元，支付一元才能参与活动)
 #  jd_moneyTree_heip.js            京东摇钱树助力
 #  jd_dwapp.js                     积分换话费
-#  jd_nnfls.js                     牛牛福利社
 #  jd_gold_sign.js                 京东金榜签到
 #  jd_txjf.js                      通讯积分
 #  jd_wish.js                      众筹许愿池
@@ -29,7 +28,6 @@
 #  jd_jin_tie_xh.js                领金贴
 #  jd_insight_Mod.js               京洞察问卷通知
 #  jd_shangou.js                   闪购签到有礼
-#  jd_jrsign.js                    京东金融双签
 #  jd_superBrand.js                特务Z-II
 #  jd_superBrandJK_1.js            特务集卡
 #  jd_superBrandJXZ.js             特务集勋章
@@ -68,14 +66,15 @@
 # jd_prodev_subject.js
 # jd_huodong.js
 # jd_cleancart.js
+# jd_nnfls.js
 
 ##############################  主  要  代  码  ##############################
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NewLine="\n          "
-UpdateDate="2022-12-01"
-UpdateContent="del jd_prodev_subject.js jd_huodong.js jd_cleancart.js"
-DeleteScripts="jd_prodev_subject.js jd_huodong.js jd_cleancart.js"
+UpdateDate="2022-12-02"
+UpdateContent="del jd_nnfls.js"
+DeleteScripts="jd_nnfls.js"
 
 ## 定义下载代理 (非内置功能)
 if [[ ${EnableExtraShellProxy} ]] && [[ ${EnableExtraShellProxy} == true ]]; then
@@ -110,7 +109,6 @@ my_scripts_array_yyds=(
   jd_moneyTree_heip.js
   jd_dwapp.js
   jd_unsubscriLive.js
-  jd_nnfls.js
   jd_gold_sign.js
   jd_wq_wxsign.js
   jd_wyw.js
