@@ -26,7 +26,7 @@
       // 文档标题
       name: '',
       // 自定义首页
-      homepage: 'pages/HomePage.md',
+      homepage: 'pages/home-page.md',
       // 导航栏logo
       logo: '',
       // 导航栏（与主题不兼容）
@@ -55,7 +55,7 @@
         hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
         // 避免搜索索引冲突
         // 同一域下的多个网站之间
-        namespace: 'website-1',
+        namespace: 'website',
         // 使用不同的索引作为路径前缀（namespaces）
         // 注意：仅适用于 paths: 'auto' 模式
         // 初始化索引时，我们从侧边栏查找第一个路径
@@ -145,15 +145,17 @@
           // 背景（颜色）
           backgroundColor: '#ffffff',
           // 标题字符（颜色）
-          titleColor: '#1F2225',
+          titleColor: '#1a1a1f',
           // 一般字符（颜色）
           textColor: '#1a1a1f',
           // 粗体字符（颜色）
-          textStrongColor: '#565656',
+          textStrongColor: '#1a1a1f',
           // 注释内容（颜色）
           blockQuoteColor: '#1a1a1f',
           // 强调字符（颜色）
           highlightColor: '#d22778',
+          // 强调字符背景（颜色）
+          highlightBackgroundColor: 'hsla(0,0%,100%,.1)',
           // 强调字符在强调提示样式中的背景（颜色）
           highlightTipBackgroundColor: '#efefef',
           // 强调字符在普通提示样式中的背景（颜色）
@@ -163,19 +165,34 @@
           // 代码块类型字符（颜色）
           codeTypeColor: '#1a1a1f',
           // 代码块背景（颜色）
-          codeBackgroundColor: '#f8f8f8',
+          codeBackgroundColor: '#f6f8fa',
           // 边框（颜色）
-          borderColor: '#ffffff07',
+          borderColor: '#dadde1',
           // 表格边框（颜色）
           tableBorderColor: '#cccccc',
+          // 表格标题背景（颜色）
+          tableTheadBackgroundColor: 'rgba(0,0,0,.03)',
           // 按钮悬浮效果背景（颜色）
-          buttonBackgroundColor: '#F3F3F5',
+          buttonBackgroundColor: '#8383831f',
           // 侧边栏标题（颜色）
           sidebarSublinkColor: '#7c7c7c',
           // 超链接（颜色）
           herfColor: '#16995e',
           // 分割线（颜色）
           hrColor: '#afafaf',
+          // 灵活弹窗警告插件样式（颜色）
+          alertNoteBorderColor: '#4cb3d4',
+          alertNoteBackgroundColor: '#eef9fd',
+          alertNoteHighlightBackgroundColor: 'rgba(84,199,236,.15)',
+          alertTipBorderColor: '#009400',
+          alertTipBackgroundColor: '#e6f6e6',
+          alertTipHighlightBackgroundColor: 'rgba(0,164,0,.15)',
+          alertWarningBorderColor: '#e6a700',
+          alertWarningBackgroundColor: '#fff8e6',
+          alertWarningHighlightBackgroundColor: 'rgba(255,186,0,.15)',
+          alertAttentionBorderColor: '#e13238',
+          alertAttentionBackgroundColor: '#ffebec',
+          alertAttentionHighlightBackgroundColor: 'rgba(250,56,62,.15)',
           // 背景覆盖
           coverBackground: 'linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)',
           // 主题样式图标
@@ -186,39 +203,56 @@
           // 主题（颜色）
           themeColor: '#4894df',
           // 背景（颜色）
-          backgroundColor: '#0F172A',
+          backgroundColor: '#1b1b1d',
           // 标题字符（颜色）
-          titleColor: '#d5d5d5',
+          titleColor: '#e3e3e3',
           // 一般字符（颜色）
-          textColor: '#c1c1c1',
+          textColor: '#e3e3e3',
           // 粗体字符（颜色）
-          textStrongColor: '#bbbbbb',
+          textStrongColor: '#e3e3e3',
           // 注释内容（颜色）
-          blockQuoteColor: '#b7b7b7',
+          blockQuoteColor: '#e3e3e3',
           // 强调字符（颜色）
           highlightColor: '#c4882e',
+          // 强调字符背景（颜色）
+          highlightBackgroundColor: 'hsla(0,0%,100%,.1)',
           // 强调字符在强调提示样式中的背景（颜色）
           highlightTipBackgroundColor: '#0c295c',
           // 强调字符在普通提示样式中的背景（颜色）
           highlightWarnBackgroundColor: '#36423a',
           // 代码块代码（颜色）
-          codeTextColor: '#c1c1c1',
+          codeTextColor: '#d4d4d4',
           // 代码块类型字符（颜色）
-          codeTypeColor: '#c1c1c1',
+          codeTypeColor: '#d4d4d4',
           // 代码块背景（颜色）
-          codeBackgroundColor: '#111d2a',
+          codeBackgroundColor: '#212121',
           // 边框（颜色）
-          borderColor: '#112436',
+          borderColor: '#444950',
           // 表格边框（颜色）
-          tableBorderColor: '#1b4368',
+          tableBorderColor: '#606770',
+          // 表格标题背景（颜色）
+          tableTheadBackgroundColor: 'hsla(0,0%,100%,.07)',
           // 按钮悬浮效果背景（颜色）
-          buttonBackgroundColor: '#a8a8a825',
+          buttonBackgroundColor: '#a8a8a812',
           // 侧边栏标题（颜色）
           sidebarSublinkColor: '#b4b4b4',
           // 超链接（颜色）
           herfColor: '#2973b7',
           // 分割线（颜色）
           hrColor: '#464646',
+          // 灵活弹窗警告插件样式（颜色）
+          alertNoteBorderColor: '#4cb3d4',
+          alertNoteBackgroundColor: '#193c47',
+          alertNoteHighlightBackgroundColor: 'rgba(84,199,236,0.15)',
+          alertTipBorderColor: '#009400',
+          alertTipBackgroundColor: '#003100',
+          alertTipHighlightBackgroundColor: 'rgba(0,164,0,0.15)',
+          alertWarningBorderColor: '#e6a700',
+          alertWarningBackgroundColor: '#4d3800',
+          alertWarningHighlightBackgroundColor: 'rgba(255,186,0,0.15)',
+          alertAttentionBorderColor: '#e13238',
+          alertAttentionBackgroundColor: '#4b1113',
+          alertAttentionHighlightBackgroundColor: 'rgba(250,56,62,0.15)',
           // 背景覆盖
           coverBackground: 'linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)',
           // 主题样式图标
