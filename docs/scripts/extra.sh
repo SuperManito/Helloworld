@@ -1,6 +1,6 @@
 #!/bin/bash
-# Update: 2022-12-02
-# Content: del jd_nnfls.js
+# Update: 2022-12-08
+# Content: add jd_nzjbtzl.js jd_nzjbtzlyqm.js jd_nzjcj.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -34,6 +34,9 @@
 #  jd_superBrandStar.js            特务Z明星送好礼
 #  jd_gold_creation.js             金榜创造营
 #  jd_TreasureRank.js              京东宝藏榜
+#  jd_nzjbtzl.js                   年终奖补贴助力
+#  jd_nzjbtzlyqm.js                年终奖补贴助力邀请码
+#  jd_nzjcj.js                     年终奖补贴抽奖
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -60,6 +63,8 @@
 #    export JD_TRY_WHITELIST=""          # 试用商品标题白名单是否打开，开启白名单后黑名单将不生效失效，默认为false
 #    export JD_TRY_WHITELISTKEYWORDS=""  # 试用商品标题白名单关键词，多个关键词用@隔开
 #    export JD_TRY_SENDNUM=""            # 每多少个账号推送一次通知，默认为4
+# "年终奖"
+#    export krshareCode=""               #年终奖补贴助力邀请码多个用@链接
 
 ##############################  近  期  删  除  ##############################
 
@@ -72,8 +77,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NewLine="\n          "
-UpdateDate="2022-12-02"
-UpdateContent="del jd_nnfls.js"
+UpdateDate="2022-12-08"
+UpdateContent="add jd_nzjbtzl.js jd_nzjbtzlyqm.js jd_nzjcj.js"
 DeleteScripts="jd_nnfls.js"
 
 ## 定义下载代理 (非内置功能)
@@ -132,6 +137,9 @@ my_scripts_array_KingRan=(
   jd_shangou.js
   jd_gold_creation.js
   jd_TreasureRank.js
+  jd_nzjbtzl.js
+  jd_nzjbtzlyqm.js
+  jd_nzjcj.js
 )
 
 ## X1a0He
