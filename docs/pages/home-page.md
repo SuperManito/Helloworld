@@ -60,7 +60,7 @@
    -b 或 --background    后台运行，不在前台输出脚本执行进度，不占用终端命令行
 ```
 
-<button class="start-button" onclick="javascript:window.open('pages/install/部署项目?id=_3-启动容器')"><i class="fa-solid fa-flag-checkered"></i> 快速开始</button>
+<button class="start-button" onclick="window.location.href ='#/pages/install/部署项目?id=_3-启动容器'"><i class="fa-solid fa-flag-checkered"></i> 快速开始</button>
 
 ***
 
