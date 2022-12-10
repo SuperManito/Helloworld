@@ -195,7 +195,7 @@
     <div>
     <details>
 
-    <summary>点击此处展开代码 👈</summary>
+    <summary title="折叠代码块">点击展开/收起代码块</summary>
 
     ```javascript
     var path = require('path');

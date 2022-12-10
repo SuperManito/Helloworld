@@ -4,8 +4,8 @@
 ![登录页](./src/img/panel/1.png ':size=40%') ![内容页](./src/img/panel/2.png ':size=40%')
 
 <h4 class="gradient-text"><strong>一个稳定安全、简单易用、强大CLI命令支持的薅羊毛环境，拥有控制面板和应用开放接口</strong></h4>
-<h4 class="gradient-text"><strong>支持运行 JavaScript Python TypeScript Shell 脚本，可自动配置相关定时计划任务</strong></h4>
-<h4 class="gradient-text"><strong>项目不会收集您的任何隐私内容，底层代码没有植入关于作者的任何私人内容口</strong></h4>
+<h4 class="gradient-text"><strong>支持运行 JavaScript/Python/TypeScript/Shell 脚本，可自动配置相关定时计划任务</strong></h4>
+<h4 class="gradient-text"><strong>项目不会收集您的任何隐私内容，底层代码没有植入关于作者的任何私人内容</strong></h4>
 <h4 class="gradient-text"><strong>这是一个免费的公益项目，任何人都可以在自己的设备上安装和使用</strong></h4>
 
 ## :fa-regular fa-command: CLI 命令 <!-- {docsify-ignore} -->
@@ -60,7 +60,7 @@
    -b 或 --background    后台运行，不在前台输出脚本执行进度，不占用终端命令行
 ```
 
-<button class="start-button" onclick="window.location.href ='#/pages/install/部署项目?id=_3-启动容器'"><i class="fa-solid fa-flag-checkered"></i> 快速开始</button>
+<button class="start-button" onclick="window.location.href ='#/pages/install/部署项目?id=_3-启动容器'" title="部署项目容器"><i class="fa-solid fa-flag-checkered"></i> 快速开始</button>
 
 ***
 
