@@ -8,7 +8,7 @@
 - <i class="fa-brands fa-instalod"></i> 安装
 
   - [<i class="fa-regular fa-block-question"></i>&nbsp; 部署前须知](pages/install/部署前须知.md)
-  - [<i class="fa-regular fa-inbox"></i>&nbsp; 安装容器服务](pages/install/安装容器服务.md)
+  - [<i class="fa-regular fa-inbox"></i>&nbsp; 容器服务](pages/install/容器服务.md)
   - [<i class="fa-regular fa-hexagon-check"></i>&nbsp; 部署项目](pages/install/部署项目.md)
   - [<i class="fa-regular fa-globe"></i>&nbsp; 配置代理](pages/install/配置代理.md)
 
