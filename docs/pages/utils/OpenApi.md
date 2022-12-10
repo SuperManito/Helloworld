@@ -311,7 +311,7 @@
       <div>
       <details>
 
-      <summary>点击此处展开 👈</summary>
+      <summary>点击展开/收起代码块</summary>
 
       ```javascript
       /* A Fussion popup of the Extra API (sweetalert2) - 公开版
