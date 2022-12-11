@@ -1,5 +1,5 @@
 
-# ![Helloworld](src/img/logo.gif ':size=13%') Helloworld :id=hello-world [![dockeri.co](https://img.shields.io/docker/pulls/supermanito/helloworld?label=Docker%20Pulls&style=flat)](https://hub.docker.com/r/supermanito/helloworld) [![dockeri.co](https://img.shields.io/docker/stars/supermanito/helloworld?label=Stars&style=flat)](https://hub.docker.com/r/supermanito/helloworld)
+# ![Helloworld](src/img/logo.gif ':size=14%') Helloworld :id=hello-world [![dockeri.co](https://img.shields.io/docker/pulls/supermanito/helloworld?label=Docker%20Pulls&style=flat)](https://hub.docker.com/r/supermanito/helloworld) [![dockeri.co](https://img.shields.io/docker/stars/supermanito/helloworld?label=Stars&style=flat)](https://hub.docker.com/r/supermanito/helloworld)
 
 ![登录页](./src/img/panel/1.png ':size=40%') ![内容页](./src/img/panel/2.png ':size=40%')
 
