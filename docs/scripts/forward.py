@@ -1,16 +1,11 @@
 '''
-活动线报人形 PagerMaid-Pyro Bot 监控插件（一键命令版）
+活动线报 PagerMaid-Pyro 人形 Bot 监控插件（一键命令版）
 Author: SuperManito
-Version: 2.0
-Modified: 2022-12-02
+Version: 2.1
+Modified: 2022-12-17
 
+官网文档：https://supermanito.github.io/Helloworld/#/pages/utils/线报监控
 友情提示：如果阁下喜欢用记事本编辑此脚本，那么如果报错了请不要在群里问，容易挨打
-
-工作原理: 
-监控本群线报Bot发送的消息，将二次处理后的命令发送至用户容器Bot通过 /cmd 指令运行，群线报自带去重功能，目前默认30分钟内不会重复，0~2点会动态调整为1时
-
-配置方法:
-自行使用带有语法检测的专业代码编辑器进行配置，首先需要定义你的容器 Bot id (user_id)，监控脚本自行定义，默认附带了几个，注意看注释内容
 
 '''
 
@@ -19,10 +14,10 @@ from pagermaid.single_utils import sqlite
 from pagermaid.enums import Client, Message
 from pagermaid.utils import lang, client
 from pagermaid.listener import listener
-from datetime import datetime
 
+from datetime import datetime, timedelta, timezone
 from asyncio import sleep
-import re, os, time
+import re
 
 ## ⚠ 容器Bot id
 ID_BOT = 1234567890
@@ -30,14 +25,15 @@ ID_BOT = 1234567890
 DEBUG_MODE = False
 
 ## 处理命令
-async def filters(text):
+async def filters(text, send_id):
+    global ID_BOT
 
     def getSqlite(value):
         return sqlite.get(f"forwardMark." + value)
 
     # 初始化一些变量
-    is_lzkj = is_lzkjdz = is_cjhy = is_cjhydz = is_txzj = enable_proxy = False # 过滤标记
-    NowHour = os.popen("echo -n $(TZ=UTC-8 date +%H)").read() # 读取当前北京时间的小时数
+    is_lzkj = is_lzkjdz = is_cjhy = is_cjhydz = is_txzj = enable_proxy = False # 判断标记
+    NowHour = printTimes('%H') # 获取当前北京时间的小时数
 
     # ⚠ 用户需知:
     # 1. return False 或返回空值为不执行任何命令即不监控对应线报
@@ -67,6 +63,12 @@ async def filters(text):
         CJHYDZ_PROXY = False
         TXZJ_PROXY = False
 
+        ## 定义针对对应类型的脚本解析所对应的推送渠道（bot id）
+        LZKJ_RECEIVE = ID_BOT
+        LZKJDZ_RECEIVE = ID_BOT
+        CJHY_RECEIVE = ID_BOT
+        CJHYDZ_RECEIVE = ID_BOT
+        TXZJ_RECEIVE = ID_BOT
 
         ## 常规脚本匹配
         if "task env edit " in text:
@@ -193,7 +195,7 @@ async def filters(text):
                 #     text = text
 
                 case _:
-                    await debugMode("未匹配到对应监控脚本")
+                    await debugMode("未匹配到对应的监控脚本")
                     return False
 
         else:
@@ -201,30 +203,35 @@ async def filters(text):
 
         ## 监控屏蔽和脚本代理（勿动）
         if is_lzkj:
+            send_id = LZKJ_RECEIVE
             if getSqlite("disable_lzkj"):
                 await debugMode("超级无线活动已被屏蔽")
                 return False
             if LZKJ_PROXY:
                 enable_proxy = True
-        elif is_lzkjdz:
+        if is_lzkjdz:
+            send_id = LZKJDZ_RECEIVE
             if getSqlite("disable_lzkjdz"):
                 await debugMode("超级无线（定制）活动已被屏蔽")
                 return False
             if LZKJDZ_PROXY:
                 enable_proxy = True
-        elif is_cjhy:
+        if is_cjhy:
+            send_id = CJHY_RECEIVE
             if getSqlite("disable_cjhy"):
                 await debugMode("超级会员活动已被屏蔽")
                 return False
             if CJHY_PROXY:
                 enable_proxy = True
-        elif is_cjhydz:
+        if is_cjhydz:
+            send_id = CJHYDZ_RECEIVE
             if getSqlite("disable_cjhydz"):
                 await debugMode("超级会员（定制）活动已被屏蔽")
                 return False
             if CJHYDZ_PROXY:
                 enable_proxy = True
-        elif is_txzj:
+        if is_txzj:
+            send_id = TXZJ_RECEIVE
             if getSqlite("disable_txzj"):
                 await debugMode("收藏大师活动已被屏蔽")
                 return False
@@ -240,12 +247,13 @@ async def filters(text):
                 text += " -a"
 
         text = "/cmd " + text
+        text = {"msg": text, "id": int(send_id)}
         return text
 
     except Exception as e:
         errorMsg = f"❌ 第{e.__traceback__.tb_lineno}行：{e}"
         await log(errorMsg)
-        await bot.send_message(int(ID_BOT), "❌ 阁下修改的脚本报错了！\n\n错误内容：" + errorMsg)
+        await bot.send_message(ID_BOT, "❌ 阁下修改的脚本报错了！\n\n错误内容：" + errorMsg)
         return False
 
 
@@ -260,6 +268,17 @@ async def filters(text):
 ID_FROM = -1001615491008
 ## 监控消息发送者（由用户id组成的数组）
 ID_ARRAY = [5116402142]
+
+ID_BOT = int(ID_BOT)
+
+def printTimes(format):
+    TZ = timezone(timedelta(hours=8), name='Asia/Shanghai')
+    times_now = datetime.utcnow().replace(tzinfo=timezone.utc).astimezone(TZ)
+    return times_now.strftime(format)
+
+async def debugMode(msg):
+    if DEBUG_MODE:
+        await bot.send_message(ID_BOT, printTimes('%Y-%m-%d %H:%M:%S') + f"\n🔧 debug: {msg}")
 
 @listener(is_plugin=False, outgoing=True, command="forward",
           description='\n线报监控插件（群用户公开版）',
@@ -298,7 +317,7 @@ async def forward(message: Message):
 
         # 返回消息
         await message.edit(f"**已启用公共线报消息监控 ✅**")
-        await bot.send_message(int(ID_BOT), "**监控已启用 ▶️**")
+        await bot.send_message(ID_BOT, "**监控已启用 ▶️**")
         await log(f"线报监控已启用")
         await sleep(5)
         await message.delete()
@@ -329,7 +348,7 @@ async def forward(message: Message):
 
         # 返回消息
         await message.edit(f"已停用消息监控插件 ❌")
-        await bot.send_message(int(ID_BOT), "**监控已关闭 🚫**")
+        await bot.send_message(ID_BOT, "**监控已关闭 🚫**")
         await log(f"线报监控已关闭")
 
         ## 删除消息 
@@ -376,7 +395,7 @@ async def forward_message(message: Message):
     try:
         if not sqlite.get(f"forward.{message.chat.id}"):
             return
-        # await bot.send_message(int(ID_BOT), str(message))
+        # await bot.send_message(ID_BOT, str(message))
 
         # 定义监控范围（由消息发送者id组成的数组），忽略匿名管理员
         if message.from_user:
@@ -397,25 +416,19 @@ async def forward_message(message: Message):
             return
 
         ## 去解析命令
-        results = await filters(text)
+        results = await filters(text, ID_BOT)
         await log(f"forward 监控到新消息：{str(text)}") # 打印日志
         if not results:
             await debugMode("线报经过函数处理后返回为空")
             return
 
         if results != '':
-            await bot.send_message(int(ID_BOT), results)
+            await bot.send_message(results['id'], results['msg'])
 
     except Exception as e:
         errorMsg = f"❌ 第{e.__traceback__.tb_lineno}行：{e}"
         await log(errorMsg)
-        await bot.send_message(int(ID_BOT), "❌ 脚本报错了！\n\n错误内容：" + errorMsg)
+        await bot.send_message(ID_BOT, "❌ 脚本报错了！\n\n错误内容：" + errorMsg)
         return False
-
-
-async def debugMode(msg):
-    if DEBUG_MODE:
-        timeStr = str(datetime.fromtimestamp(int(time.time())))
-        await bot.send_message(int(ID_BOT), timeStr + f"\n🔧 debug: {msg}")
 
 ## ⬆️ 不懂勿动 ⬆️
