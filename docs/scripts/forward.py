@@ -1,39 +1,42 @@
-'''
+"""
 活动线报 PagerMaid-Pyro 人形 Bot 监控插件（一键命令版）
 Author: SuperManito
-Version: 2.1
-Modified: 2022-12-17
+Modify: @omg-xtao
+Version: 2.2
+Modified: 2022-12-22
 
 官网文档：https://supermanito.github.io/Helloworld/#/pages/utils/线报监控
 友情提示：如果阁下喜欢用记事本编辑此脚本，那么如果报错了请不要在群里问，容易挨打
 
-'''
+"""
+import re
 
 from pagermaid import bot, log
 from pagermaid.single_utils import sqlite
-from pagermaid.enums import Client, Message
-from pagermaid.utils import lang, client
+from pagermaid.enums import Message
+from pagermaid.utils import lang, edit_delete
 from pagermaid.listener import listener
 
 from datetime import datetime, timedelta, timezone
 from asyncio import sleep
-import re
 
-## ⚠ 容器Bot id
-ID_BOT = 1234567890
-## 调试模式
+# ⚠ 容器Bot ID 或 用户名，推荐使用 bot 用户名 @xxxxxxxxxxxxx_bot
+# ID_BOT = 1234567890
+ID_BOT = "xxxxxxxxxxxxx_bot"
+# 调试模式
 DEBUG_MODE = False
 
-## 处理命令
+
+# 处理命令
 async def filters(text, send_id):
     global ID_BOT
 
     def getSqlite(value):
-        return sqlite.get(f"forwardMark." + value)
+        return sqlite.get(f"forwardMark.{value}")
 
     # 初始化一些变量
-    is_lzkj = is_lzkjdz = is_cjhy = is_cjhydz = is_txzj = enable_proxy = False # 判断标记
-    NowHour = printTimes('%H') # 获取当前北京时间的小时数
+    is_lzkj = is_lzkjdz = is_cjhy = is_cjhydz = is_txzj = enable_proxy = False  # 判断标记
+    NowHour = printTimes('%H')  # 获取当前北京时间的小时数
 
     # ⚠ 用户需知:
     # 1. return False 或返回空值为不执行任何命令即不监控对应线报
@@ -42,7 +45,6 @@ async def filters(text, send_id):
     # 4. 在 try 作用域下代码报错会自动向你的bot发送错误信息，但是不一定会影响监控的正常运行
 
     try:
-
         ## 定义你的运行账号（凌晨线报较多，合理安排运行账号，你也可以自定义此可选参数变量）
         if NowHour in ['23', '00', '01', '02']:
             LZKJ_RUNS = " -c 1-2"
@@ -54,7 +56,6 @@ async def filters(text, send_id):
             CJHY_RUNS = " -c 1-4"
             TXZJ_RUNS = " -c 1-4"
             ADDCARTS_RUNS = " -c 1"
-
 
         ## 定义针对对应类型的脚本是否启用 HTTP/HTTPS 全局代理（--agent）
         LZKJ_PROXY = False
@@ -121,32 +122,32 @@ async def filters(text, send_id):
                 # 店铺抽奖中心 · 超级无线
                 case 'jd_drawCenter.js':
                     text += LZKJ_RUNS
-                    is_lzkj = True # 用于屏蔽标记判断（勿动）
+                    is_lzkj = True  # 用于屏蔽标记判断（勿动）
 
                 # 读秒拼手速 · 超级无线
                 case 'jd_wxSecond.js':
                     text += LZKJ_RUNS
-                    is_lzkj = is_lzkjdz = True # 用于屏蔽标记判断（勿动）
+                    is_lzkj = is_lzkjdz = True  # 用于屏蔽标记判断（勿动）
 
                 # 无线游戏 · 超级无线
                 case 'jd_wxgame.js':
                     text += LZKJ_RUNS
-                    is_lzkj = True # 用于屏蔽标记判断（勿动）
+                    is_lzkj = True  # 用于屏蔽标记判断（勿动）
 
                 # 集卡有礼 · 超级无线
                 case 'jd_wxCollectCard.js':
                     text += LZKJ_RUNS
-                    is_lzkj = is_lzkjdz = True # 用于屏蔽标记判断（勿动）
+                    is_lzkj = is_lzkjdz = True  # 用于屏蔽标记判断（勿动）
 
                 # 粉丝互动 · 超级无线
                 case 'jd_wxFansInterActionActivity.js':
                     text += LZKJ_RUNS
-                    is_lzkj = is_lzkjdz = True # 用于屏蔽标记判断（勿动）
+                    is_lzkj = is_lzkjdz = True  # 用于屏蔽标记判断（勿动）
 
                 # 分享有礼 · 超级无线
                 case 'jd_wxShareActivity.js':
                     text = text
-                    is_lzkj = is_lzkjdz = True # 用于屏蔽标记判断（勿动）
+                    is_lzkj = is_lzkjdz = True  # 用于屏蔽标记判断（勿动）
 
                 # 组队瓜分奖品 · 超级无线
                 case 'jd_zdjr.js':
@@ -246,8 +247,8 @@ async def filters(text, send_id):
             if enable_proxy:
                 text += " -a"
 
-        text = "/cmd " + text
-        text = {"msg": text, "id": int(send_id)}
+        text = f"/cmd {text}"
+        text = {"msg": text, "id": send_id}
         return text
 
     except Exception as e:
@@ -257,28 +258,25 @@ async def filters(text, send_id):
         return False
 
 
+# ⚠⚠⚠
+# ⬇️ 不懂勿动 ⬇️
 
-
-
-
-## ⚠⚠⚠
-## ⬇️ 不懂勿动 ⬇️
-
-## 监控群组ID
+# 监控群组ID
 ID_FROM = -1001615491008
-## 监控消息发送者（由用户id组成的数组）
+# 监控消息发送者（由用户id组成的数组）
 ID_ARRAY = [5116402142]
 
-ID_BOT = int(ID_BOT)
 
-def printTimes(format):
+def printTimes(format_):
     TZ = timezone(timedelta(hours=8), name='Asia/Shanghai')
     times_now = datetime.utcnow().replace(tzinfo=timezone.utc).astimezone(TZ)
-    return times_now.strftime(format)
+    return times_now.strftime(format_)
+
 
 async def debugMode(msg):
     if DEBUG_MODE:
         await bot.send_message(ID_BOT, printTimes('%Y-%m-%d %H:%M:%S') + f"\n🔧 debug: {msg}")
+
 
 @listener(is_plugin=False, outgoing=True, command="forward",
           description='\n线报监控插件（群用户公开版）',
@@ -290,13 +288,11 @@ async def debugMode(msg):
 async def forward(message: Message):
     errMsg = "出错了呜呜呜 ~ 无法识别的来源对话。"
 
-    if ID_BOT == '1234567890':
-        await message.edit("⚠ 请先在此脚本中定义你的容器 BOT id 后才能使用哦~")
-        await sleep(5)
-        await message.delete()
+    if str(ID_BOT) in {"1234567890", "xxxxxxxxxxxxx_bot"}:
+        await edit_delete(message, "⚠ 请先在此脚本中定义你的容器 BOT id 后才能使用哦~")
         return
 
-    ## 开启监控
+    # 开启监控
     if message.parameter[0] == "enable":
         # 检查来源频道/群组
         try:
@@ -310,21 +306,13 @@ async def forward(message: Message):
         if not sqlite.get(f"forward.{channel.id}"):
             sqlite[f"forward.{channel.id}"] = ID_BOT
         else:
-            await message.edit('❌ 插件正在运行中，无需再次启用')
-            await sleep(5)
-            await message.delete()
+            await edit_delete(message, "❌ 插件正在运行中，无需再次启用")
             return
 
         # 返回消息
-        await message.edit(f"**已启用公共线报消息监控 ✅**")
         await bot.send_message(ID_BOT, "**监控已启用 ▶️**")
-        await log(f"线报监控已启用")
-        await sleep(5)
-        await message.delete()
-
-        ## 删除消息 
-        await sleep(5)
-        await message.delete()
+        await log("线报监控已启用")
+        await edit_delete(message, "**已启用公共线报消息监控 ✅**")
 
 
     ## 关闭监控
@@ -341,32 +329,26 @@ async def forward(message: Message):
         try:
             del sqlite[f"forward.{channel.id}"]
         except:
-            await message.edit('❌ 目标对话没有启用监控')
-            await sleep(5)
-            await message.delete()
+            await edit_delete(message, "❌ 目标对话没有启用监控")
             return
 
         # 返回消息
-        await message.edit(f"已停用消息监控插件 ❌")
         await bot.send_message(ID_BOT, "**监控已关闭 🚫**")
-        await log(f"线报监控已关闭")
+        await log("线报监控已关闭")
+        # 删除消息
+        await edit_delete(message, "已停用消息监控插件 ❌")
 
-        ## 删除消息 
-        await sleep(5)
-        await message.delete()
-
-
-    ## 设置标记
+    # 设置标记
     elif (message.parameter[0] == "set") and (len(message.parameter) == 2):
         keys = message.parameter[1]
 
         if sqlite.get(f"forwardMark.{keys}"):
-            await message.edit(f"❌ 已在数据库中设置当前标记（无法添加）")
+            await message.edit("❌ 已在数据库中设置当前标记（无法添加）")
         else:
             sqlite[f"forwardMark.{keys}"] = ID_BOT
             await message.edit(f"已设置 __{keys}__ 用户监控标记 ✅")
 
-        ## 删除消息 
+        ## 删除消息
         await sleep(5)
         await message.delete()
 
@@ -379,9 +361,9 @@ async def forward(message: Message):
             del sqlite[f"forwardMark.{keys}"]
             await message.edit(f"已移除 __{keys}__ 用户监控标记 ❎")
         else:
-            await message.edit(f"❌ 未在数据库中设置当前标记（无法移除）")
+            await message.edit("❌ 未在数据库中设置当前标记（无法移除）")
 
-        ## 删除消息 
+        ## 删除消息
         await sleep(5)
         await message.delete()
 
@@ -400,14 +382,14 @@ async def forward_message(message: Message):
         # 定义监控范围（由消息发送者id组成的数组），忽略匿名管理员
         if message.from_user:
             from_user = message.from_user
-            ## 判断是否在监控名单中
+            # 判断是否在监控名单中
             if from_user.id not in ID_ARRAY:
                 return
         else:
             # 匿名管理员
             return
 
-        ## 匹配带有执行命令的消息且原消息不能为空
+        # 匹配带有执行命令的消息且原消息不能为空
         text = message.text.markdown
         if text != '' and '`' in text:
             text = text.split('`')[1]
@@ -415,9 +397,9 @@ async def forward_message(message: Message):
             await debugMode("线报内容的语法格式不符合要求")
             return
 
-        ## 去解析命令
+        # 去解析命令
         results = await filters(text, ID_BOT)
-        await log(f"forward 监控到新消息：{str(text)}") # 打印日志
+        await log(f"forward 监控到新消息：{str(text)}")  # 打印日志
         if not results:
             await debugMode("线报经过函数处理后返回为空")
             return
