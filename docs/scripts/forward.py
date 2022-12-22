@@ -3,7 +3,7 @@
 Author: SuperManito
 Modify: @omg-xtao
 Version: 2.2
-Modified: 2022-12-22
+Date: 2022-12-22
 
 官网文档：https://supermanito.github.io/Helloworld/#/pages/utils/线报监控
 友情提示：如果阁下喜欢用记事本编辑此脚本，那么如果报错了请不要在群里问，容易挨打
@@ -343,14 +343,10 @@ async def forward(message: Message):
         keys = message.parameter[1]
 
         if sqlite.get(f"forwardMark.{keys}"):
-            await message.edit("❌ 已在数据库中设置当前标记（无法添加）")
+            await edit_delete(message, "❌ 已在数据库中设置当前标记（无法添加）")
         else:
             sqlite[f"forwardMark.{keys}"] = ID_BOT
-            await message.edit(f"已设置 __{keys}__ 用户监控标记 ✅")
-
-        ## 删除消息
-        await sleep(5)
-        await message.delete()
+            await edit_delete(message, (f"已设置 __{keys}__ 用户监控标记 ✅"))
 
 
     ## 移除标记
@@ -360,12 +356,10 @@ async def forward(message: Message):
         if sqlite.get(f"forwardMark.{keys}"):
             del sqlite[f"forwardMark.{keys}"]
             await message.edit(f"已移除 __{keys}__ 用户监控标记 ❎")
+            await edit_delete(message, "已停用消息监控插件 ❌")
         else:
             await message.edit("❌ 未在数据库中设置当前标记（无法移除）")
-
-        ## 删除消息
-        await sleep(5)
-        await message.delete()
+            await edit_delete(message, "已停用消息监控插件 ❌")
 
 
     else:
