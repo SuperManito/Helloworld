@@ -64,4 +64,4 @@
 
 ***
 
-:fa-brands fa-telegram: [电报频道](https://t.me/jdhelloworld)&emsp;&emsp;:fa-duotone fa-comments: [讨论群组]()&emsp;&emsp;:fa-solid fa-warehouse: [镜像仓库](https://hub.docker.com/r/supermanito/helloworld)
+:fa-brands fa-telegram: **[电报频道](https://t.me/jdhelloworld)**&emsp;&emsp;:fa-duotone fa-comments: **[讨论群组](https://t.me/jdhelloworld_group)**&emsp;&emsp;:fa-solid fa-warehouse: **[镜像仓库](https://hub.docker.com/r/supermanito/helloworld)**

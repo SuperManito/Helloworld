@@ -1,7 +1,7 @@
 const themeConfig = {
     siteFont: "-apple-system, SF Pro, Microsoft YaHei, Source Sans Pro, Helvetica Neue, Arial, sans-serif",
     defaultTheme: "light",
-    codeFontFamily: "JetBrains Mono",
+    codeFontFamily: "SF-Mono",
     bodyFontSize: "17px",
     // 浅色主题
     light: {
@@ -48,7 +48,7 @@ const themeConfig = {
         // 表格标题背景（颜色）
         tableTheadBackgroundColor: "rgba(0,0,0,.03)",
         // 光标悬浮效果背景（颜色）
-        hoverBackgroundColor: "#8383831f",
+        hoverBackgroundColor: "#8383831a",
         // 折叠块背景（颜色）
         summaryBackgroundColor: "#e7f7e8",
         // 超链接（颜色）
