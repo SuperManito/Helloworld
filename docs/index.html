@@ -27,8 +27,8 @@
     window.$docsify = {
       // 文档标题
       name: '',
-      // 自定义首页
-      homepage: 'pages/home-page.md',
+      // 自定义主页
+      homepage: 'pages/home.md',
       // 导航栏logo
       logo: '',
       // 导航栏（与主题不兼容）
@@ -38,13 +38,17 @@
       // 加载侧边栏
       loadSidebar: true,
       // 导航栏展开的子标题等级
-      subMaxLevel: 3,
+      subMaxLevel: 4,
       // 启用自定义404页
       notFoundPage: true,
       // 跳转后自动移到顶部
       auto2top: true,
       // 更新日志
       changelog: 'pages/start/近期更新.md',
+      // 跳转锚点与顶部的距离
+      topMargin: 90,
+      // 加载页面script
+      executeScript: true,
 
       // 搜索
       search: {
@@ -68,6 +72,11 @@
         pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/
       },
 
+      // 页面自定义标题
+      customPageTitle: {
+        suffix: 'Hellworld', // title suffix.
+      },
+
       // 选项卡
       tabs: {
         persist: true,
@@ -81,7 +90,7 @@
       count: {
         countable: true,
         position: 'bottom',
-        margin: "30px",
+        margin: "0",
         float: 'right',
         fontsize: '1em',
         color: 'var(--textColor)',
@@ -96,7 +105,7 @@
       // 页脚内容
       footer: {
         style: 'text-align: center; font-size: 16px; line-height: 1.5; margin-top: 1.5em; color: var(--sidebarSublinkColor)',
-        copy: 'Copyright 2021 ~ 2023 <i class="fa-regular fa-copyright"></i> <a href="https://github.com/SuperManito" target="_blank" rel="noreferrer" rel="noopener">SuperManito</a></br>',
+        copy: 'Copyright © <a href="https://github.com/SuperManito" target="_blank" rel="noreferrer" rel="noopener">SuperManito</a> 2021 ~ 2023.',
         auth: 'Website built with  <a href="https://docsify.js.org" target="_blank" rel="noreferrer" rel="noopener">Docsify</a>'
       },
 
@@ -131,6 +140,20 @@
         }
       },
 
+      plugins: [
+        // 编辑页面
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            content = ':fa-regular fa-pen-to-square: 编辑此页';
+            let baseUrl = 'https://github.com/SuperManito/Helloworld/blob/main/docs/'; // 基础链接
+            let url = baseUrl + vm.route.file;
+            var editHtml =
+              `<div class="docsify-editPage"><button class="docsify-editPage-button" onclick="javascript:window.open('${url}')">${content}</button></div>`;
+            return html + '\n\n' + editHtml
+          })
+        },
+      ],
+
       // 主题配置
       darklightTheme: themeConfig
     }
@@ -141,7 +164,7 @@
   <script type="text/javascript" src="src/js/vue.main.js"></script>
   <script type="text/javascript" src="src/js/vue.prod.js"></script>
   <!-- Element Plus UI -->
-  <script type="text/javascript" src="src/js/element-plus.js"></script>
+  <!-- <script type="text/javascript" src="src/js/element-plus.js"></script> -->
   <!-- 主题 -->
   <script type="text/javascript" src="src/js/docsify-darklightTheme.js"></script>
   <!-- 灵活警告 -->
@@ -166,6 +189,8 @@
   <script type="text/javascript" src="src/js/docsify-changelog.js"></script>
   <!-- 图片缩放 -->
   <script type="text/javascript" src="src/js/docsify-zoom-image.js"></script>
+  <!-- 页面自定义标题 -->
+  <script type="text/javascript" src="src/js/docsify-customPageTitle.js"></script>
   <!-- 本地离线缓存模式 -->
   <script>
     if (typeof navigator.serviceWorker !== 'undefined') {
@@ -184,7 +209,6 @@
   <!-- 面板内置接口可视化工具 -->
   <script type="text/javascript" src="src/js/openApi-h5-popup.js"></script>
   <script type="text/javascript" src="src/js/sweetalert2.js"></script>
-
 </body>
 
 </html>

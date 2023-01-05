@@ -1,7 +1,7 @@
 const themeConfig = {
-    siteFont: "-apple-system, SF Pro, Microsoft YaHei, Source Sans Pro, Helvetica Neue, Arial, sans-serif",
+    siteFont: '"-apple-system, "BlinkMacSystemFont", "SF Pro Display", "SF Pro", "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, "sans-serif"',
     defaultTheme: "light",
-    codeFontFamily: "SF-Mono",
+    codeFont: "SF-Mono",
     bodyFontSize: "17px",
     // 浅色主题
     light: {

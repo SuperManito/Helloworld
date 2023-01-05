@@ -18,14 +18,14 @@
 
 ## 配置方法
 
-- ### 基础配置 <!-- {docsify-ignore} -->
+- ### 基础配置
 
   > [!NOTE|label:面板入口]
   > 编辑配置 - 账号配置
 
   ?> 建议通过面板进行编辑，有格式检测可以减少配置出错，注意 `pt_pin` 和 `ws_key` 填入的是对应的值，不要把格式和标点符号带进去
 
-  - #### 编辑位于 **config** 目录下的 **account.json** 配置文件
+  - #### 编辑位于 **config** 目录下的 **account.json** 配置文件 <!-- {docsify-ignore} -->
 
     ```json
     [
@@ -69,7 +69,7 @@
     > `pt_pin` 用户名，目前在APP的部分请求中已被加密可能无法通过抓包有效获取，可前往账号设置进行查看  
     > 如果用户名含有中文汉字需转换成 `UrlEncode`，面板自带转换工具，入口位于页面上方按钮
 
-  - ### 定时设置 <!-- {docsify-ignore} -->
+  - ### 定时设置
 
     ?> 项目已配置定时任务但默认被注释，如需使用请自行取消注释并参考使用建议
 
@@ -83,7 +83,7 @@
     > 部分脚本执行时间过长可能导致pt_key在执行期间过期失效，因此应在这类脚本执行前进行更新  
     > 如果短时间内频繁使用或一天内转换次数过多可能会被官方限制IP地址(至少持续一周)，不要滥用
 
-  - ### 功能设置 <!-- {docsify-ignore} -->
+  - ### 功能设置
 
     - #### 更新账号推送通知功能
 
@@ -105,14 +105,14 @@
 
 ## 抓包获取
 
-  - ### :fa-brands fa-apple: iOS/iPadOS <!-- {docsify-ignore} -->
+  - ### :fa-brands fa-apple: iOS/iPadOS
 
     > 安装：从 :fa-brands fa-app-store-ios: App Store 下载 [Stream](https://apps.apple.com/cn/app/stream/id1312141691) ，然后打开 Stream - HTTPS抓包 - 根据提示安装证书并信任  
     > 抓包：在 Stream 主界面点击开始抓包，打开 JD 主 APP 并从底栏中点击我的（如果后台已有则需要退出并重新打开一个新的），然后返回 Stream - 抓包历史 - 按域名 - `api.m.jd.com`  
     > 方法：从列出来的请求列表中点击任意一个请求进入抓包详情界面进行查看，在请求（顶栏） - 请求头部 - 内容中找到 `Cookies:` ，在其中寻找 wskey  
     > ㅤㅤㅤ 一般 Cookies 内容的第一行就是，wskey 不是所有请求里都有如果没有就换一个继续找
   
-  - ### :fa-brands fa-android: Android <!-- {docsify-ignore} -->
+  - ### :fa-brands fa-android: Android
 
     > 建议通过 HttpCanary 小黄鸟 App 进行抓包，方式与上方苹果设备类似，不过限制较多导致门槛较高，建议使用下方教程中的 AnyProxy 协助抓取
 
@@ -121,6 +121,7 @@
 ***
 
 ## 协助抓取
+
 > 此方法旨在为**帮助他人抓取WSKEY**，需要一台**能够通过公网访问**的 Linux 环境，基于 [AnyProxy - 由阿里巴巴集团发布的一款开源抓包工具](https://github.com/alibaba/anyproxy)  
 > 如果是本地操作借助一些专业工具即可无需使用此方法，例如安卓：Httpcanary；IOS：Stream、Thor 等App
 
@@ -128,25 +129,25 @@
 
   ?> 如果已安装则忽略该步骤
 
-  - #### 安装 Nodejs
+  - #### 安装 Nodejs <!-- {docsify-ignore} -->
 
     > 由于 NodeSource 没有国内源，下载速度可能较慢，会附带安装 **npm**
 
-    - ##### Debian/Ubuntu/Kali
+    - ##### Debian/Ubuntu/Kali <!-- {docsify-ignore} -->
 
       ```bash
       curl -sL https://deb.nodesource.com/setup_16.x | bash -
       apt-get install -y nodejs
       ```
 
-    - ##### RHEL/CentOS/Fedora
+    - ##### RHEL/CentOS/Fedora <!-- {docsify-ignore} -->
 
       ```bash
       curl -sL https://rpm.nodesource.com/setup_16.x | bash -
       yum install -y nodejs
       ```
   
-  - #### npm 切换国内源
+  - #### npm 切换国内源 <!-- {docsify-ignore} -->
 
     ```bash
     npm config set registry https://registry.npmmirror.com
@@ -155,20 +156,20 @@
 
 - ### 安装并配置 AnyProxy <!-- {docsify-ignore} -->
 
-  - #### 安装
+  - #### 安装 <!-- {docsify-ignore} -->
 
     ```bash
     npm install -g anyproxy
     ```
 
-  - #### 生成证书
+  - #### 生成证书 <!-- {docsify-ignore} -->
 
     ```bash
     anyproxy-ca
     ```
     > 一路回车
 
-  - #### 启动服务
+  - #### 启动服务 <!-- {docsify-ignore} -->
 
     ```bash
     anyproxy --intercept
