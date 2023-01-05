@@ -1,14 +1,11 @@
 
 # ![Helloworld](src/img/logo.gif ':size=14%') Helloworld :id=hello-world [![dockeri.co](https://img.shields.io/docker/pulls/supermanito/helloworld?label=Docker%20Pulls&style=flat)](https://hub.docker.com/r/supermanito/helloworld) [![dockeri.co](https://img.shields.io/docker/stars/supermanito/helloworld?label=Stars&style=flat)](https://hub.docker.com/r/supermanito/helloworld)
 
-![登录页](./src/img/panel/1.png ':size=40%') ![内容页](./src/img/panel/2.png ':size=40%')
+![登录页](./src/img/panel/1.png ':size=49%') ![内容页](./src/img/panel/2.png ':size=49%')
 
-<h4 class="gradient-text"><strong>一个稳定安全、简单易用、强大CLI命令支持的薅羊毛环境，拥有控制面板和应用开放接口</strong></h4>
+<h4 class="gradient-text"><strong>一个稳定安全、简单易用、强大CLI命令支持的薅羊毛环境，拥有控制面板和开放接口</strong></h4>
 <h4 class="gradient-text"><strong>支持运行 JavaScript/Python/TypeScript/Shell 脚本，可自动配置相关定时计划任务</strong></h4>
-<h4 class="gradient-text"><strong>项目不会收集您的任何隐私内容，底层代码没有植入关于作者的任何私人内容</strong></h4>
-<h4 class="gradient-text"><strong>这是一个免费的公益项目，任何人都可以在自己的设备上安装和使用</strong></h4>
-
-## :fa-regular fa-command: CLI 命令 <!-- {docsify-ignore} -->
+<h4 class="gradient-text"><strong>这是一个免费的公益项目，任何人都可以安装和使用，项目不会收集您的任何隐私内容</strong></h4>
 
 ```bash
 ❖ 主要命令：
@@ -64,4 +61,4 @@
 
 ***
 
-:fa-brands fa-telegram: **[电报频道](https://t.me/jdhelloworld)**&emsp;&emsp;:fa-duotone fa-comments: **[讨论群组](https://t.me/jdhelloworld_group)**&emsp;&emsp;:fa-solid fa-warehouse: **[镜像仓库](https://hub.docker.com/r/supermanito/helloworld)**
+<a><img src="./src/img/svg/Telegram.svg" style="width: 2%; vertical-align: -0.15em;"/></a> **[电报频道](https://t.me/jdhelloworld)**&emsp;&emsp;<i class="fa-duotone fa-comments" style="--fa-primary-color: #45b97c; --fa-secondary-color: #1d953f" ></i> **[讨论群组](https://t.me/jdhelloworld_group)**&emsp;&emsp;<i class="fa-duotone fa-warehouse" style="--fa-primary-color: #fdb933; --fa-secondary-color: #843900" ></i> **[镜像仓库](https://hub.docker.com/r/supermanito/helloworld)**
