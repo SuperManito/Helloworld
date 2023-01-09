@@ -6,11 +6,11 @@ const themeConfig = {
     // 浅色主题
     light: {
         // 主题（颜色）
-        themeColor: "#42b983",
+        themeColor: "#42b883",
         // 背景（颜色）
         backgroundColor: "#ffffff",
         // 侧边栏标题（颜色）
-        sidebarSublinkColor: "#7c7c7c",
+        sidebarSublinkColor: "#5c5454",
         // 标题字符（颜色）
         titleColor: "#1a1a1f",
         // 一般字符（颜色）
