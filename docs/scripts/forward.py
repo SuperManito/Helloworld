@@ -1,16 +1,13 @@
 """
 活动线报 PagerMaid-Pyro 人形 Bot 监控插件（一键命令版）
 Author: SuperManito
-Modify: @omg-xtao
-Version: 2.2
-Date: 2022-12-22
+Version: 2.3
+Date: 2023-01-09
 
 官网文档：https://supermanito.github.io/Helloworld/#/pages/utils/线报监控
 友情提示：如果阁下喜欢用记事本编辑此脚本，那么如果报错了请不要在群里问，容易挨打
 
 """
-import re
-
 from pagermaid import bot, log
 from pagermaid.single_utils import sqlite
 from pagermaid.enums import Message
@@ -19,17 +16,18 @@ from pagermaid.listener import listener
 
 from datetime import datetime, timedelta, timezone
 from asyncio import sleep
+import re
 
-# ⚠ 容器Bot ID 或 用户名，推荐使用 bot 用户名 @xxxxxxxxxxxxx_bot
-# ID_BOT = 1234567890
-ID_BOT = "xxxxxxxxxxxxx_bot"
+# ⚠ 容器Bot ID 或 用户名（推荐用户名）
+# USER_BOT = 1234567890 或 USER_BOT = "xxxxxx_bot"，注意如果是id不要带引号
+USER_BOT = "xxxxxx_bot"
 # 调试模式
 DEBUG_MODE = False
 
 
 # 处理命令
 async def filters(text, send_id):
-    global ID_BOT
+    global USER_BOT
 
     def getSqlite(value):
         return sqlite.get(f"forwardMark.{value}")
@@ -48,11 +46,13 @@ async def filters(text, send_id):
         ## 定义你的运行账号（凌晨线报较多，合理安排运行账号，你也可以自定义此可选参数变量）
         if NowHour in ['23', '00', '01', '02']:
             LZKJ_RUNS = " -c 1-2"
+            LZKJ_LOREAL = " -c 1-2"
             CJHY_RUNS = " -c 1-2"
             TXZJ_RUNS = " -c 1-2"
             ADDCARTS_RUNS = " -c 1"
         else:
             LZKJ_RUNS = " -c 1-4"
+            LZKJ_LOREAL = " -c 1-4"
             CJHY_RUNS = " -c 1-4"
             TXZJ_RUNS = " -c 1-4"
             ADDCARTS_RUNS = " -c 1"
@@ -60,16 +60,18 @@ async def filters(text, send_id):
         ## 定义针对对应类型的脚本是否启用 HTTP/HTTPS 全局代理（--agent）
         LZKJ_PROXY = False
         LZKJDZ_PROXY = False
+        LZKJ_LOREAL_PROXY = False
         CJHY_PROXY = False
         CJHYDZ_PROXY = False
         TXZJ_PROXY = False
 
-        ## 定义针对对应类型的脚本解析所对应的推送渠道（bot id）
-        LZKJ_RECEIVE = ID_BOT
-        LZKJDZ_RECEIVE = ID_BOT
-        CJHY_RECEIVE = ID_BOT
-        CJHYDZ_RECEIVE = ID_BOT
-        TXZJ_RECEIVE = ID_BOT
+        ## 定义针对对应类型的脚本解析所对应的推送渠道
+        LZKJ_RECEIVE = USER_BOT
+        LZKJDZ_RECEIVE = USER_BOT
+        LZKJ_LOREAL_RECEIVE = USER_BOT
+        CJHY_RECEIVE = USER_BOT
+        CJHYDZ_RECEIVE = USER_BOT
+        TXZJ_RECEIVE = USER_BOT
 
         ## 常规脚本匹配
         if "task env edit " in text:
@@ -78,9 +80,12 @@ async def filters(text, send_id):
 
             # 脚本类型屏蔽标记判断（勿动）
             if 'https://lzkj' in text:
-                is_lzkj = True
-                if 'https://lzkjdz' in text:
-                    is_lzkjdz = True
+                if '/prod/cc/interactsaas/' in text:
+                    is_lzkj_loreal = True
+                else:
+                    is_lzkj = True
+                    if 'https://lzkjdz' in text:
+                        is_lzkjdz = True
             elif 'https://cjhy' in text:
                 is_cjhy = True
                 if 'https://cjhydz' in text:
@@ -173,6 +178,18 @@ async def filters(text, send_id):
                 case 'jd_txzj_lottery.js':
                     text += TXZJ_RUNS
 
+                # 店铺抽奖 · 超级无线欧莱雅
+                case 'jd_lzkj_loreal_draw.js':
+                    text += LZKJ_LOREAL
+
+                # 关注店铺有礼 · 超级无线欧莱雅
+                case 'jd_lzkj_loreal_followShop.js':
+                    text += LZKJ_LOREAL
+
+                # 加购有礼 · 超级无线欧莱雅
+                case 'jd_lzkj_loreal_cart.js':
+                    text += ADDCARTS_RUNS
+
                 # 购物车锦鲤 · 超级无线
                 # case 'jd_wxCartKoi.js':
                 #     text += ADDCARTS_RUNS
@@ -185,14 +202,6 @@ async def filters(text, send_id):
 
                 # 大牌集合 · 京耕
                 # case 'jd_opencardDPLHTY.js':
-                #     text = text
-
-                # joyjd抽奖机
-                # case 'jd_lottery.js':
-                #     text = text
-
-                # joyjd开卡
-                # case 'jd_joyopen.js':
                 #     text = text
 
                 case _:
@@ -216,6 +225,13 @@ async def filters(text, send_id):
                 await debugMode("超级无线（定制）活动已被屏蔽")
                 return False
             if LZKJDZ_PROXY:
+                enable_proxy = True
+        if is_lzkj_loreal:
+            send_id = LZKJ_LOREAL_RECEIVE
+            if getSqlite("disable_lzkj_loreal"):
+                await debugMode("超级无线欧莱雅活动已被屏蔽")
+                return False
+            if LZKJ_LOREAL_PROXY:
                 enable_proxy = True
         if is_cjhy:
             send_id = CJHY_RECEIVE
@@ -254,7 +270,7 @@ async def filters(text, send_id):
     except Exception as e:
         errorMsg = f"❌ 第{e.__traceback__.tb_lineno}行：{e}"
         await log(errorMsg)
-        await bot.send_message(ID_BOT, "❌ 阁下修改的脚本报错了！\n\n错误内容：" + errorMsg)
+        await bot.send_message(USER_BOT, "❌ 阁下修改的脚本报错了！\n\n错误内容：" + errorMsg)
         return False
 
 
@@ -275,7 +291,7 @@ def printTimes(format_):
 
 async def debugMode(msg):
     if DEBUG_MODE:
-        await bot.send_message(ID_BOT, printTimes('%Y-%m-%d %H:%M:%S') + f"\n🔧 debug: {msg}")
+        await bot.send_message(USER_BOT, printTimes('%Y-%m-%d %H:%M:%S') + f"\n🔧 debug: {msg}")
 
 
 @listener(is_plugin=False, outgoing=True, command="forward",
@@ -288,7 +304,7 @@ async def debugMode(msg):
 async def forward(message: Message):
     errMsg = "出错了呜呜呜 ~ 无法识别的来源对话。"
 
-    if str(ID_BOT) in {"1234567890", "xxxxxxxxxxxxx_bot"}:
+    if str(USER_BOT) in {"1234567890", "xxxxxxxxxxxxx_bot"}:
         await edit_delete(message, "⚠ 请先在此脚本中定义你的容器 BOT id 后才能使用哦~")
         return
 
@@ -304,13 +320,13 @@ async def forward(message: Message):
 
         # 记录id至数据库
         if not sqlite.get(f"forward.{channel.id}"):
-            sqlite[f"forward.{channel.id}"] = ID_BOT
+            sqlite[f"forward.{channel.id}"] = USER_BOT
         else:
             await edit_delete(message, "❌ 插件正在运行中，无需再次启用")
             return
 
         # 返回消息
-        await bot.send_message(ID_BOT, "**监控已启用 ▶️**")
+        await bot.send_message(USER_BOT, "**监控已启用 ▶️**")
         await log("线报监控已启用")
         await edit_delete(message, "**已启用公共线报消息监控 ✅**")
 
@@ -333,7 +349,7 @@ async def forward(message: Message):
             return
 
         # 返回消息
-        await bot.send_message(ID_BOT, "**监控已关闭 🚫**")
+        await bot.send_message(USER_BOT, "**监控已关闭 🚫**")
         await log("线报监控已关闭")
         # 删除消息
         await edit_delete(message, "已停用消息监控插件 ❌")
@@ -345,7 +361,7 @@ async def forward(message: Message):
         if sqlite.get(f"forwardMark.{keys}"):
             await edit_delete(message, "❌ 已在数据库中设置当前标记（无法添加）")
         else:
-            sqlite[f"forwardMark.{keys}"] = ID_BOT
+            sqlite[f"forwardMark.{keys}"] = USER_BOT
             await edit_delete(message, (f"已设置 __{keys}__ 用户监控标记 ✅"))
 
 
@@ -371,7 +387,7 @@ async def forward_message(message: Message):
     try:
         if not sqlite.get(f"forward.{message.chat.id}"):
             return
-        # await bot.send_message(ID_BOT, str(message))
+        # await bot.send_message(USER_BOT, str(message))
 
         # 定义监控范围（由消息发送者id组成的数组），忽略匿名管理员
         if message.from_user:
@@ -392,10 +408,10 @@ async def forward_message(message: Message):
             return
 
         # 去解析命令
-        results = await filters(text, ID_BOT)
+        results = await filters(text, USER_BOT)
         await log(f"forward 监控到新消息：{str(text)}")  # 打印日志
         if not results:
-            await debugMode("线报经过函数处理后返回为空")
+            await debugMode("线报经过函数处理后返回内容为空")
             return
 
         if results != '':
@@ -404,7 +420,7 @@ async def forward_message(message: Message):
     except Exception as e:
         errorMsg = f"❌ 第{e.__traceback__.tb_lineno}行：{e}"
         await log(errorMsg)
-        await bot.send_message(ID_BOT, "❌ 脚本报错了！\n\n错误内容：" + errorMsg)
+        await bot.send_message(USER_BOT, "❌ 脚本报错了！\n\n错误内容：" + errorMsg)
         return False
 
 ## ⬆️ 不懂勿动 ⬆️
