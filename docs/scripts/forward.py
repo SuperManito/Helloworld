@@ -33,7 +33,7 @@ async def filters(text, send_id):
         return sqlite.get(f"forwardMark.{value}")
 
     # 初始化一些变量
-    is_lzkj = is_lzkjdz = is_cjhy = is_cjhydz = is_txzj = enable_proxy = False  # 判断标记
+    is_lzkj = is_lzkjdz = is_lzkj_loreal = is_cjhy = is_cjhydz = is_txzj = enable_proxy = False  # 判断标记
     NowHour = printTimes('%H')  # 获取当前北京时间的小时数
 
     # ⚠ 用户需知:
