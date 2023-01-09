@@ -31,8 +31,6 @@ const themeConfig = {
         codeTextColor: "#1a1a1f",
         // 代码块类型字符（颜色）
         codeTypeColor: "#1a1a1f",
-        // 代码块背景（颜色）
-        codeBackgroundColor: "#f6f8fa",
         // 代码关键字（颜色）
         codeKeywordColor: "#e96900",
         // 代码函数字符（颜色）
@@ -41,14 +39,18 @@ const themeConfig = {
         codeNumberColor: "#8d90e8",
         // 代码字符串（颜色）
         codeStringColor: "#84d115",
+        // 代码块背景（颜色）
+        codeBackgroundColor: "#f6f8fa",
+        // 代码块复制按钮悬浮效果背景（颜色）
+        copyButtonHoverBackgroundColor: "rgb(188 188 191 / 22%)",
         // 边框（颜色）
-        borderColor: "#dadde1",
+        borderColor: "rgb(239, 239, 245)",
         // 表格边框（颜色）
         tableBorderColor: "#cccccc",
         // 表格标题背景（颜色）
         tableTheadBackgroundColor: "rgba(0,0,0,.03)",
         // 光标悬浮效果背景（颜色）
-        hoverBackgroundColor: "#8383831a",
+        hoverBackgroundColor: "rgb(243, 243, 245)",
         // 折叠块背景（颜色）
         summaryBackgroundColor: "#e7f7e8",
         // 超链接（颜色）
@@ -73,7 +75,7 @@ const themeConfig = {
         // 渐变文字背景样式
         gradientTextColor: "linear-gradient(90deg,#7209d4,#2832d4 33%,#00a5b2)",
         // 主题样式图标
-        themeIcon: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMzNDQ5NWUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLW1vb24iPjxwYXRoIGQ9Ik0yMSAxMi43OUE5IDkgMCAxIDEgMTEuMjEgMyA3IDcgMCAwIDAgMjEgMTIuNzl6Ij48L3BhdGg+PC9zdmc+")',
+        themeIcon: 'url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0yOC4wNTI3IDQuNDEwODVDMjIuNTgyOCA1LjgzNjk1IDE4LjU0NTUgMTAuODEwNiAxOC41NDU1IDE2LjcyNzNDMTguNTQ1NSAyMy43NTY0IDI0LjI0MzYgMjkuNDU0NSAzMS4yNzI3IDI5LjQ1NDVDMzcuMTg5NCAyOS40NTQ1IDQyLjE2MzEgMjUuNDE3MiA0My41ODkxIDE5Ljk0NzNDNDMuODU4NSAyMS4yNTYgNDQgMjIuNjExNSA0NCAyNEM0NCAzNS4wNDU3IDM1LjA0NTcgNDQgMjQgNDRDMTIuOTU0MyA0NCA0IDM1LjA0NTcgNCAyNEM0IDEyLjk1NDMgMTIuOTU0MyA0IDI0IDRDMjUuMzg4NSA0IDI2Ljc0NCA0LjE0MTQ5IDI4LjA1MjcgNC40MTA4NVoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFhMWExZiIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+")',
     },
     // 深色主题
     dark: {
@@ -113,8 +115,10 @@ const themeConfig = {
         codeStringColor: "#5987cb",
         // 代码块背景（颜色）
         codeBackgroundColor: "#212121",
+        // 代码块复制按钮悬浮效果背景（颜色）
+        copyButtonHoverBackgroundColor: "#8d8d8d1f",
         // 边框（颜色）
-        borderColor: "#444950",
+        borderColor: "rgba(255, 255, 255, 0.09)",
         // 表格边框（颜色）
         tableBorderColor: "#606770",
         // 表格标题背景（颜色）
@@ -145,6 +149,6 @@ const themeConfig = {
         // 渐变文字背景样式
         gradientTextColor: "-webkit-linear-gradient(315deg,#42d392 25%,#647eff)",
         // 主题样式图标
-        themeIcon: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLXN1biI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iNSI+PC9jaXJjbGU+PGxpbmUgeDE9IjEyIiB5MT0iMSIgeDI9IjEyIiB5Mj0iMyI+PC9saW5lPjxsaW5lIHgxPSIxMiIgeTE9IjIxIiB4Mj0iMTIiIHkyPSIyMyI+PC9saW5lPjxsaW5lIHgxPSI0LjIyIiB5MT0iNC4yMiIgeDI9IjUuNjQiIHkyPSI1LjY0Ij48L2xpbmU+PGxpbmUgeDE9IjE4LjM2IiB5MT0iMTguMzYiIHgyPSIxOS43OCIgeTI9IjE5Ljc4Ij48L2xpbmU+PGxpbmUgeDE9IjEiIHkxPSIxMiIgeDI9IjMiIHkyPSIxMiI+PC9saW5lPjxsaW5lIHgxPSIyMSIgeTE9IjEyIiB4Mj0iMjMiIHkyPSIxMiI+PC9saW5lPjxsaW5lIHgxPSI0LjIyIiB5MT0iMTkuNzgiIHgyPSI1LjY0IiB5Mj0iMTguMzYiPjwvbGluZT48bGluZSB4MT0iMTguMzYiIHkxPSI1LjY0IiB4Mj0iMTkuNzgiIHkyPSI0LjIyIj48L2xpbmU+PC9zdmc+")',
+        themeIcon: 'url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0yNCAzN0MzMS4xNzk3IDM3IDM3IDMxLjE3OTcgMzcgMjRDMzcgMTYuODIwMyAzMS4xNzk3IDExIDI0IDExQzE2LjgyMDMgMTEgMTEgMTYuODIwMyAxMSAyNEMxMSAzMS4xNzk3IDE2LjgyMDMgMzcgMjQgMzdaIiBmaWxsPSJub25lIiBzdHJva2U9IiNlM2UzZTMiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0yNCA2QzI1LjM4MDcgNiAyNi41IDQuODgwNzEgMjYuNSAzLjVDMjYuNSAyLjExOTI5IDI1LjM4MDcgMSAyNCAxQzIyLjYxOTMgMSAyMS41IDIuMTE5MjkgMjEuNSAzLjVDMjEuNSA0Ljg4MDcxIDIyLjYxOTMgNiAyNCA2WiIgZmlsbD0iI2UzZTNlMyIvPjxwYXRoIGQ9Ik0zOC41IDEyQzM5Ljg4MDcgMTIgNDEgMTAuODgwNyA0MSA5LjVDNDEgOC4xMTkyOSAzOS44ODA3IDcgMzguNSA3QzM3LjExOTMgNyAzNiA4LjExOTI5IDM2IDkuNUMzNiAxMC44ODA3IDM3LjExOTMgMTIgMzguNSAxMloiIGZpbGw9IiNlM2UzZTMiLz48cGF0aCBkPSJNNDQuNSAyNi41QzQ1Ljg4MDcgMjYuNSA0NyAyNS4zODA3IDQ3IDI0QzQ3IDIyLjYxOTMgNDUuODgwNyAyMS41IDQ0LjUgMjEuNUM0My4xMTkzIDIxLjUgNDIgMjIuNjE5MyA0MiAyNEM0MiAyNS4zODA3IDQzLjExOTMgMjYuNSA0NC41IDI2LjVaIiBmaWxsPSIjZTNlM2UzIi8+PHBhdGggZD0iTTM4LjUgNDFDMzkuODgwNyA0MSA0MSAzOS44ODA3IDQxIDM4LjVDNDEgMzcuMTE5MyAzOS44ODA3IDM2IDM4LjUgMzZDMzcuMTE5MyAzNiAzNiAzNy4xMTkzIDM2IDM4LjVDMzYgMzkuODgwNyAzNy4xMTkzIDQxIDM4LjUgNDFaIiBmaWxsPSIjZTNlM2UzIi8+PHBhdGggZD0iTTI0IDQ3QzI1LjM4MDcgNDcgMjYuNSA0NS44ODA3IDI2LjUgNDQuNUMyNi41IDQzLjExOTMgMjUuMzgwNyA0MiAyNCA0MkMyMi42MTkzIDQyIDIxLjUgNDMuMTE5MyAyMS41IDQ0LjVDMjEuNSA0NS44ODA3IDIyLjYxOTMgNDcgMjQgNDdaIiBmaWxsPSIjZTNlM2UzIi8+PHBhdGggZD0iTTkuNSA0MUMxMC44ODA3IDQxIDEyIDM5Ljg4MDcgMTIgMzguNUMxMiAzNy4xMTkzIDEwLjg4MDcgMzYgOS41IDM2QzguMTE5MjkgMzYgNyAzNy4xMTkzIDcgMzguNUM3IDM5Ljg4MDcgOC4xMTkyOSA0MSA5LjUgNDFaIiBmaWxsPSIjZTNlM2UzIi8+PHBhdGggZD0iTTMuNSAyNi41QzQuODgwNzEgMjYuNSA2IDI1LjM4MDcgNiAyNEM2IDIyLjYxOTMgNC44ODA3MSAyMS41IDMuNSAyMS41QzIuMTE5MjkgMjEuNSAxIDIyLjYxOTMgMSAyNEMxIDI1LjM4MDcgMi4xMTkyOSAyNi41IDMuNSAyNi41WiIgZmlsbD0iI2UzZTNlMyIvPjxwYXRoIGQ9Ik05LjUgMTJDMTAuODgwNyAxMiAxMiAxMC44ODA3IDEyIDkuNUMxMiA4LjExOTI5IDEwLjg4MDcgNyA5LjUgN0M4LjExOTI5IDcgNyA4LjExOTI5IDcgOS41QzcgMTAuODgwNyA4LjExOTI5IDEyIDkuNSAxMloiIGZpbGw9IiNlM2UzZTMiLz48L3N2Zz4=")',
     },
 };
