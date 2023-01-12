@@ -129,7 +129,7 @@ const themeConfig = {
         // 折叠块背景（颜色）
         summaryBackgroundColor: "#1d364c",
         // 超链接光标悬浮（颜色）
-        herfHoverColor: "#2973b7",
+        herfHoverColor: "#196fbf",
         // 分割线（颜色）
         hrColor: "#464646",
         // 灵活警告插件样式（颜色）
