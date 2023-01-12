@@ -1,3 +1,5 @@
+<body><link rel="stylesheet" href="src/css/element-plus.css" /></body>
+
 # :fa-regular fa-plug: 控制面板开放应用程序接口
 
 ## 一、接口说明

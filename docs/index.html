@@ -8,7 +8,6 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="src/css/docsify.css" />
-  <link rel="stylesheet" href="src/css/element-plus.css" />
   <link rel="icon" type="image/x-icon" href="src/img/logo.gif" />
 </head>
 
@@ -28,7 +27,7 @@
       // 文档标题
       name: '',
       // 自定义主页
-      homepage: 'pages/home.md',
+      homepage: 'pages/README.md',
       // 导航栏logo
       logo: '',
       // 导航栏（与主题不兼容）
@@ -105,8 +104,8 @@
       // 页脚内容
       footer: {
         style: 'text-align: center; font-size: 16px; line-height: 1.5; margin-top: 1.5em; color: var(--sidebarSublinkColor)',
-        copy: 'Copyright © <a href="https://github.com/SuperManito" target="_blank" rel="noreferrer" rel="noopener">SuperManito</a> 2021 ~ 2023.',
-        auth: 'Website built with  <a href="https://docsify.js.org" target="_blank" rel="noreferrer" rel="noopener">Docsify</a>'
+        copy: 'Copyright © <a href="https://github.com/SuperManito" target="_blank" rel="noreferrer" rel="noopener">SuperManito</a> 2023. Website built with <a href="https://netlify.app/" target="_blank" rel="noreferrer" rel="noopener">Netlify</a></br>',
+        auth: 'Docs engine powered By <a href="https://docsify.js.org" target="_blank" rel="noreferrer" rel="noopener">Docsify</a>'
       },
 
       // 分页导航
@@ -144,8 +143,8 @@
         // 编辑页面
         function (hook, vm) {
           hook.beforeEach(function (html) {
-            content = ':fa-regular fa-pen-to-square: 编辑此页';
-            let baseUrl = 'https://github.com/SuperManito/Helloworld/blob/main/docs/'; // 基础链接
+            content = '<i class="fa-regular fa-pen-to-square"></i> 编辑此页';
+            let baseUrl = 'https://github.com/SuperManito/Helloworld/blob/main/docs/';
             let url = baseUrl + vm.route.file;
             var editHtml =
               `<div class="docsify-editPage"><button class="docsify-editPage-button" onclick="javascript:window.open('${url}')">${content}</button></div>`;
@@ -163,6 +162,9 @@
   <!-- Vue 3 -->
   <script type="text/javascript" src="src/js/vue.main.js"></script>
   <script type="text/javascript" src="src/js/vue.prod.js"></script>
+  <!-- Font Awesome 图标 -->
+  <script type="text/javascript" src="src/js/docsify-fontawesome.js"></script>
+  <script type="text/javascript" src="src/js/fontawesome-kit.js"></script>
   <!-- Element Plus UI -->
   <!-- <script type="text/javascript" src="src/js/element-plus.js"></script> -->
   <!-- 主题 -->
@@ -175,8 +177,8 @@
   <script type="text/javascript" src="src/js/docsify-pagination.js"></script>
   <!-- HTML演示 -->
   <script type="text/javascript" src="src/js/docsify-html-demo.js"></script>
-  <!-- 复制代码按钮 -->
-  <script type="text/javascript" src="src/js/docsify-copy-code.js"></script>
+  <!-- 复制按钮 -->
+  <script type="text/javascript" src="src/js/docsify-copyButton.js"></script>
   <!-- 选项卡 -->
   <script type="text/javascript" src="src/js/docsify-tabs.js"></script>
   <!-- 字数统计 -->
@@ -197,16 +199,13 @@
       navigator.serviceWorker.register('src/js/docsify-serviceWorker.js')
     }
   </script>
-  <!-- Font Awesome 图标 -->
-  <script type="text/javascript" src="src/js/docsify-fontawesome.js"></script>
-  <script type="text/javascript" src="src/js/fontawesome.js"></script>
-  <!-- 代码块高亮组件 -->
+  <!-- 代码块高亮 -->
   <script type="text/javascript" src="src/js/prism-bash.min.js"></script>
   <script type="text/javascript" src="src/js/prism-json.min.js"></script>
   <script type="text/javascript" src="src/js/prism-log.min.js"></script>
   <script type="text/javascript" src="src/js/prism-yaml.min.js"></script>
   <script type="text/javascript" src="src/js/prism-python.min.js"></script>
-  <!-- 面板内置接口可视化工具 -->
+  <!-- 内置接口可视化工具 -->
   <script type="text/javascript" src="src/js/openApi-h5-popup.js"></script>
   <script type="text/javascript" src="src/js/sweetalert2.js"></script>
 </body>
