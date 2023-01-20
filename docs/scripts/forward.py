@@ -1,8 +1,8 @@
 """
 活动线报 PagerMaid-Pyro 人形 Bot 监控插件（一键命令版）
 Author: SuperManito
-Version: 2.3
-Date: 2023-01-09
+Version: 2.4
+Date: 2023-01-21
 
 官网文档：https://supermanito.github.io/Helloworld/#/pages/utils/线报监控
 友情提示：如果阁下喜欢用记事本编辑此脚本，那么如果报错了请不要在群里问，容易挨打
@@ -34,7 +34,7 @@ async def filters(text, send_id):
 
     # 初始化一些变量
     is_lzkj = is_lzkjdz = is_lzkj_loreal = is_cjhy = is_cjhydz = is_txzj = enable_proxy = False  # 判断标记
-    NowHour = printTimes('%H')  # 获取当前北京时间的小时数
+    NowHour = getTimes('%H')  # 获取当前北京时间的小时数
 
     # ⚠ 用户需知:
     # 1. return False 或返回空值为不执行任何命令即不监控对应线报
@@ -283,15 +283,15 @@ ID_FROM = -1001615491008
 ID_ARRAY = [5116402142]
 
 
-def printTimes(format_):
+def getTimes(format):
     TZ = timezone(timedelta(hours=8), name='Asia/Shanghai')
     times_now = datetime.utcnow().replace(tzinfo=timezone.utc).astimezone(TZ)
-    return times_now.strftime(format_)
+    return times_now.strftime(format)
 
 
 async def debugMode(msg):
     if DEBUG_MODE:
-        await bot.send_message(USER_BOT, printTimes('%Y-%m-%d %H:%M:%S') + f"\n🔧 debug: {msg}")
+        await bot.send_message(USER_BOT, getTimes('%Y-%m-%d %H:%M:%S') + f"\n🔧 debug: {msg}")
 
 
 @listener(is_plugin=False, outgoing=True, command="forward",
@@ -304,7 +304,7 @@ async def debugMode(msg):
 async def forward(message: Message):
     errMsg = "出错了呜呜呜 ~ 无法识别的来源对话。"
 
-    if str(USER_BOT) in {"1234567890", "xxxxxxxxxxxxx_bot"}:
+    if str(USER_BOT) in {"1234567890", "xxxxxx_bot"}:
         await edit_delete(message, "⚠ 请先在此脚本中定义你的容器 BOT id 后才能使用哦~")
         return
 
@@ -352,7 +352,8 @@ async def forward(message: Message):
         await bot.send_message(USER_BOT, "**监控已关闭 🚫**")
         await log("线报监控已关闭")
         # 删除消息
-        await edit_delete(message, "已停用消息监控插件 ❌")
+        await edit_delete(message, "已停用公共线报消息监控 ❌")
+
 
     # 设置标记
     elif (message.parameter[0] == "set") and (len(message.parameter) == 2):
@@ -371,11 +372,9 @@ async def forward(message: Message):
 
         if sqlite.get(f"forwardMark.{keys}"):
             del sqlite[f"forwardMark.{keys}"]
-            await message.edit(f"已移除 __{keys}__ 用户监控标记 ❎")
-            await edit_delete(message, "已停用消息监控插件 ❌")
+            await edit_delete(message, f"已移除 __{keys}__ 用户监控标记 ❎")
         else:
-            await message.edit("❌ 未在数据库中设置当前标记（无法移除）")
-            await edit_delete(message, "已停用消息监控插件 ❌")
+            await edit_delete(message, "❌ 未在数据库中设置当前标记（无法移除）")
 
 
     else:
