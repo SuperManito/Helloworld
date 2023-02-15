@@ -1,6 +1,10 @@
 
 # ![Helloworld](src/img/logo.gif ':size=14%') <span class="gradient-text">Helloworld</span> :id=hello-world [![dockeri.co](https://img.shields.io/docker/pulls/supermanito/helloworld?label=Docker%20Pulls&style=flat)](https://hub.docker.com/r/supermanito/helloworld) [![dockeri.co](https://img.shields.io/docker/stars/supermanito/helloworld?label=Stars&style=flat)](https://hub.docker.com/r/supermanito/helloworld)
 
+> [!WARNING|label:重要通知（我们没有跑路）]
+> 受不可抗力影响，目前我们位于 Telegram 的官方频道以及群组无法正常访问（凭空消失，原因未知）  
+> 已向 Telegram 多个官方渠道的客服提交了申诉以请求紧急技术支援，目前仍在等待客服的回复...
+
 ![登录页](./src/img/panel/1.png ':size=49%') ![内容页](./src/img/panel/2.png ':size=49%')
 
 ### 一个稳定安全、简单易用、强大CLI命令支持的薅羊毛环境，拥有控制面板和开放接口 <!-- {docsify-ignore} -->
