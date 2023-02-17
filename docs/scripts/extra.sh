@@ -1,6 +1,6 @@
 #!/bin/bash
-# Update: 2022-12-08
-# Content: del jd_nnfls.js
+# Update: 2023-02-17
+# Content: del jd_joy_park_task.js jd_shangou.js jd_TreasureRank.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -23,17 +23,14 @@
 #  jd_ddly.js                      东东乐园
 #  jd_speed_redpocke.js            京东极速版红包
 #  jd_beauty.js                    美丽研究院修复版
-#  jd_joy_park_task.js             汪汪乐园每日任务
 #  jd_joymanor_task.js             JOY庄园每日任务
 #  jd_jin_tie_xh.js                领金贴
 #  jd_insight_Mod.js               京洞察问卷通知
-#  jd_shangou.js                   闪购签到有礼
 #  jd_superBrand.js                特务Z-II
 #  jd_superBrandJK_1.js            特务集卡
 #  jd_superBrandJXZ.js             特务集勋章
 #  jd_superBrandStar.js            特务Z明星送好礼
 #  jd_gold_creation.js             金榜创造营
-#  jd_TreasureRank.js              京东宝藏榜
 
 
 ##############################  脚  本  内  环  境  变  量  ##############################
@@ -69,14 +66,17 @@
 # jd_huodong.js
 # jd_cleancart.js
 # jd_nnfls.js
+# jd_joy_park_task.js
+# jd_shangou.js
+# jd_TreasureRank.js
 
 ##############################  主  要  代  码  ##############################
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NewLine="\n          "
-UpdateDate="2022-12-08"
-UpdateContent="del jd_nnfls.js"
-DeleteScripts="jd_nnfls.js"
+UpdateDate="2023-02-17"
+UpdateContent="del jd_joy_park_task.js jd_shangou.js jd_TreasureRank.js"
+DeleteScripts="jd_joy_park_task.js jd_shangou.js jd_TreasureRank.js"
 
 ## 定义下载代理 (非内置功能)
 if [[ ${EnableExtraShellProxy} ]] && [[ ${EnableExtraShellProxy} == true ]]; then
@@ -104,19 +104,7 @@ my_scripts_array_Public=(
 
 ## yyds
 scripts_base_url_yyds="${GitHubRawUrl}/okyyds/yyds/master/"
-my_scripts_array_yyds=(
-  JDSignValidator.js
-  jd_try_notify.py
-  jd_morningSc.js
-  jd_moneyTree_heip.js
-  jd_dwapp.js
-  jd_unsubscriLive.js
-  jd_gold_sign.js
-  jd_wq_wxsign.js
-  jd_wyw.js
-  jd_ddly.js
-  jd_speed_redpocke.js
-)
+my_scripts_array_yyds=()
 
 ## KingRan
 scripts_base_url_KingRan="${GitHubRawUrl}/KingRan/KR/main/"
@@ -128,12 +116,9 @@ my_scripts_array_KingRan=(
   jd_superBrandStar.js
   jd_wish.js
   jd_beauty.js
-  jd_joy_park_task.js
   jd_joymanor_task.js
   jd_sign_graphics.js
-  jd_shangou.js
   jd_gold_creation.js
-  jd_TreasureRank.js
 )
 
 ## X1a0He
