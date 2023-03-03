@@ -1,11 +1,7 @@
 # ![Helloworld](src/img/logo.gif ':size=14%') <span class="gradient-text">Helloworld</span> :id=hello-world [![dockeri.co](https://img.shields.io/docker/pulls/supermanito/helloworld?label=Docker%20Pulls&style=flat)](https://hub.docker.com/r/supermanito/helloworld) [![dockeri.co](https://img.shields.io/docker/stars/supermanito/helloworld?label=Stars&style=flat)](https://hub.docker.com/r/supermanito/helloworld)
 
-> [!WARNING|label:重要通知（我们没有跑路）]
-> 受不可抗力影响，目前我们位于 Telegram 的官方频道以及群组无法正常访问（凭空消失，原因未知）  
-> 已向 Telegram 多个官方渠道的客服提交了申诉以请求紧急技术支援，目前仍在等待客服的回复...
-
 > [!TIP]
-> 我们即将推出全新的版本，请持续关注此官方网站并注意来自其它渠道的通知，敬请期待...
+> 我们即将推出全新的版本，请持续关注此官方网站并注意来自各渠道的通知，敬请期待...
 
 ![登录页](./src/img/panel/1.png ':size=49%') ![内容页](./src/img/panel/2.png ':size=49%')
 
