@@ -1,6 +1,6 @@
 #!/bin/bash
-# Update: 2023-02-17
-# Content: del jd_joy_park_task.js jd_shangou.js jd_TreasureRank.js
+# Update: 2023-03-03
+# Content: add jd_yqlxj_help.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -31,6 +31,7 @@
 #  jd_superBrandJXZ.js             特务集勋章
 #  jd_superBrandStar.js            特务Z明星送好礼
 #  jd_gold_creation.js             金榜创造营
+#  jd_yqlxj_help.js                邀请领现金
 
 
 ##############################  脚  本  内  环  境  变  量  ##############################
@@ -58,7 +59,8 @@
 #    export JD_TRY_WHITELIST=""          # 试用商品标题白名单是否打开，开启白名单后黑名单将不生效失效，默认为false
 #    export JD_TRY_WHITELISTKEYWORDS=""  # 试用商品标题白名单关键词，多个关键词用@隔开
 #    export JD_TRY_SENDNUM=""            # 每多少个账号推送一次通知，默认为4
-
+# "邀请领现金"
+#    export krlxjcode=""                 #需要定义环境变量 krlxjcode 指定助力码,不填写会获取助力码，更新抽奖，提现
 
 ##############################  近  期  删  除  ##############################
 
@@ -74,9 +76,9 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NewLine="\n          "
-UpdateDate="2023-02-17"
-UpdateContent="del jd_joy_park_task.js jd_shangou.js jd_TreasureRank.js"
-DeleteScripts="jd_joy_park_task.js jd_shangou.js jd_TreasureRank.js"
+UpdateDate="2023-03-03"
+UpdateContent="add jd_yqlxj_help.js"
+DeleteScripts=""
 
 ## 定义下载代理 (非内置功能)
 if [[ ${EnableExtraShellProxy} ]] && [[ ${EnableExtraShellProxy} == true ]]; then
@@ -119,6 +121,7 @@ my_scripts_array_KingRan=(
   jd_joymanor_task.js
   jd_sign_graphics.js
   jd_gold_creation.js
+  jd_yqlxj_help.js
 )
 
 ## X1a0He
