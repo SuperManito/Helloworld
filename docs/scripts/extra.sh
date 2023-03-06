@@ -1,6 +1,6 @@
 #!/bin/bash
 # Update: 2023-03-03
-# Content: add jd_yqlxj_help.js
+# Content: add jd_hcredrain.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -32,7 +32,7 @@
 #  jd_superBrandStar.js            特务Z明星送好礼
 #  jd_gold_creation.js             金榜创造营
 #  jd_yqlxj_help.js                邀请领现金
-
+#  jd_hcredrain.js                 会场红包雨
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -76,8 +76,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NewLine="\n          "
-UpdateDate="2023-03-03"
-UpdateContent="add jd_yqlxj_help.js"
+UpdateDate="2023-03-06"
+UpdateContent="add jd_hcredrain.js"
 DeleteScripts=""
 
 ## 定义下载代理 (非内置功能)
@@ -122,6 +122,7 @@ my_scripts_array_KingRan=(
   jd_sign_graphics.js
   jd_gold_creation.js
   jd_yqlxj_help.js
+  jd_hcredrain.js
 )
 
 ## X1a0He
