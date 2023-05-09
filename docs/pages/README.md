@@ -1,7 +1,8 @@
 # ![Helloworld](src/img/logo.gif ':size=14%') <span class="gradient-text">Helloworld</span> :id=hello-world [![dockeri.co](https://img.shields.io/docker/pulls/supermanito/helloworld?label=Docker%20Pulls&style=flat)](https://hub.docker.com/r/supermanito/helloworld) [![dockeri.co](https://img.shields.io/docker/stars/supermanito/helloworld?label=Stars&style=flat)](https://hub.docker.com/r/supermanito/helloworld)
 
 > [!TIP]
-> 我们即将推出全新的版本，请持续关注此官方网站并注意来自各渠道的通知，敬请期待...
+> 我们即将推出全新的版本，请持续关注此官方网站并注意来自各渠道的通知，敬请期待...  
+> [预览新版官网](https://jdhelloworld-dev.netlify.app)
 
 ![登录页](./src/img/panel/1.png ':size=49%') ![内容页](./src/img/panel/2.png ':size=49%')
 

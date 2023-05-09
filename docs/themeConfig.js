@@ -49,7 +49,7 @@ const themeConfig = {
         codeNumberColor: "#8d90e8",
         // 代码块字符串（颜色）
         codeStringColor: "#84d115",
-        // 代码块块复制按钮悬浮效果背景（颜色）
+        // 代码块复制按钮悬浮效果背景（颜色）
         copyButtonHoverBackgroundColor: "rgb(188 188 191 / 22%)",
         // 边框（颜色）
         borderColor: "rgb(239, 239, 245)",
@@ -108,7 +108,7 @@ const themeConfig = {
         highlightWarnBackgroundColor: "#36423a",
         // 代码块块背景（颜色）
         codeBackgroundColor: "#212121",
-        // 代码块块一般字符（颜色）
+        // 代码块一般字符（颜色）
         codeTextColor: "#d4d4d4",
         // 代码块块类型字符（颜色）
         codeTypeColor: "#d4d4d4",
