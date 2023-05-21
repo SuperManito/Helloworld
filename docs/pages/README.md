@@ -2,7 +2,7 @@
 
 > [!TIP]
 > 我们即将推出全新的版本，请持续关注此官方网站并注意来自各渠道的通知，敬请期待...  
-> [预览新版官网](https://jdhelloworld-dev.netlify.app)
+> [预览新版官网](https://arcadia.cool)
 
 ![登录页](./src/img/panel/1.png ':size=49%') ![内容页](./src/img/panel/2.png ':size=49%')
 
